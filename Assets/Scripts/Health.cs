@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
             Die();
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         // This is to prevent the GameObject's health from going into a negative value when taking damage
         if((currentHealth - damage) < 0)
@@ -40,7 +40,7 @@ public class Health : MonoBehaviour
         UpdateHealthBar();
     }
 
-    void Heal(int healAmount)
+    public void Heal(int healAmount)
     {
         // This is to prevent the GameObject's health from going above the maximum health
         if((currentHealth + healAmount) > maxHealth)
