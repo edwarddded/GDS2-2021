@@ -9,15 +9,9 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 movement;
 
-    public bool isBuilding;
-    public GameObject[] TowerFrames;
-
-    private Inventory inv;
-
     private void Start()
     {
-        inv = GetComponent<Inventory>();
-        isBuilding = false;
+
     }
 
     // Update is called once per frame
@@ -39,21 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
-
-
-        /*******************
-         * Tower Building 
-         ********************/
-        if (Input.GetKeyDown("1"))
-        {
-            // 10 is just an example cost of a tower, 
-            // going to implement a separate script to retrieve tower cost later
-            if (!isBuilding && (inv.GetScrap() >= 10))
-            {
-                isBuilding = true;
-                Instantiate(TowerFrames[0]);
-            }
-        }
 
     }
 

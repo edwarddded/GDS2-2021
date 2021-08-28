@@ -5,39 +5,49 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    private int scrap;
-    public Text scrapTxt;
+    #region Singleton
 
-    private void Start()
+    public static Inventory instance;
+
+    private void Awake()
     {
-        ResetInventory();
-        UpdateText();
+        if(instance != null)
+        {
+            Debug.LogWarning("More than one instance of Inventory found");
+            return;
+        }
+        instance = this;
     }
 
-    public void AddScrap(int s)
+    #endregion
+
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
+
+    public int space = 20;
+
+    public List<Item> items = new List<Item>();
+
+    public bool Add(Item item)
     {
-        scrap += s;
-        UpdateText();
+        if(items.Count >= space)
+        {
+            return false;
+        }
+
+        items.Add(item);
+
+        if(onItemChangedCallback != null)
+        onItemChangedCallback.Invoke();
+
+        return true;
     }
 
-    public void RemoveScrap(int s)
+    public void Remove(Item item)
     {
-        scrap -= s;
-        UpdateText();
-    }
+        items.Remove(item);
 
-    public int GetScrap()
-    {
-        return scrap;
-    }
-
-    private void UpdateText()
-    {
-        scrapTxt.text = scrap.ToString();
-    }
-    
-    private void ResetInventory()
-    {
-        scrap = 0;
+        if (onItemChangedCallback != null)
+            onItemChangedCallback.Invoke();
     }
 }
