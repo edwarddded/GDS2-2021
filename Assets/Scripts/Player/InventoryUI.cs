@@ -6,6 +6,7 @@ public class InventoryUI : MonoBehaviour
 {
     public Transform itemsParent;
     public GameObject inventoryUI;
+    public GameObject buildUI;
 
     Inventory inventory;
 
@@ -25,6 +26,14 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetButtonDown("Inventory"))
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
+            if (inventoryUI.activeSelf == true)
+                buildUI.SetActive(false);
+        }
+        if (Input.GetButtonDown("Build"))
+        {
+            buildUI.SetActive(!buildUI.activeSelf);
+            if (buildUI.activeSelf == true)
+                inventoryUI.SetActive(false);
         }
     }
 
