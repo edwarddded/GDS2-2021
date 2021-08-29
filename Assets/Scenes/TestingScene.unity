@@ -1046,6 +1046,11 @@ PrefabInstance:
       propertyPath: moon
       value: 
       objectReference: {fileID: 838131447}
+    - target: {fileID: 7392367167380732594, guid: 4348bca3d23188048bf11cf746f57082,
+        type: 3}
+      propertyPath: FullDayLength
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7392367167380732595, guid: 4348bca3d23188048bf11cf746f57082,
         type: 3}
       propertyPath: m_Name
