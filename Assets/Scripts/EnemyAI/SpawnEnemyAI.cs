@@ -5,24 +5,48 @@ using UnityEngine;
 public class SpawnEnemyAI : MonoBehaviour
 {
     public GameObject Enemy;
-    public int xPos;
-    public int zPos;
+
+    [Header("EnemySpawnRange")]
+    public int xPosMin;
+    public int xPosMax;
+    public int zPosMin;
+    public int zPosMax;
+
+    private int xPos;
+    private int zPos;
     public int enemyCount;
+
+    public bool isSpawnEnemy = false;
 
     void Start()
     {
-        StartCoroutine(EnemyDrop());
+        
     }
 
+    private void Update()
+    {
+        bool Night = GameObject.Find("DayNightCycle").GetComponent<DayNightCycle>().IsNight;
+        bool Morning = GameObject.Find("DayNightCycle").GetComponent<DayNightCycle>().IsMorning;
+        if (Night && !isSpawnEnemy)
+        {
+            StartCoroutine(EnemyDrop());
+            isSpawnEnemy = true;
+        }
+        if (Morning && isSpawnEnemy)
+        {
+            isSpawnEnemy = false;
+            enemyCount = 0;
+        }
+    }
     IEnumerator EnemyDrop()
     {
-        while (enemyCount <10)
+        while (enemyCount <5)
         {
-            xPos = Random.Range(-80, -100);
-            zPos = Random.Range(5, -5);
-            Instantiate(Enemy, new Vector3(xPos, 23, zPos), Quaternion.identity);
+            xPos = Random.Range(xPosMin, xPosMax);
+            zPos = Random.Range(zPosMin, zPosMax);
+            Instantiate(Enemy, new Vector3(transform.position.x + xPos, transform.position.y, transform.position.z + zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
-            enemyCount += 1;
-        }
+            enemyCount += 1;    
+        }       
     }
 }

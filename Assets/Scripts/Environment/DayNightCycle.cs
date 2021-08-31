@@ -25,14 +25,39 @@ public class DayNightCycle : MonoBehaviour
     public AnimationCurve LightingIntensityMultiplier;
     public AnimationCurve ReflectionsIntensityMultipler;
 
+    public bool IsNight;
+    public bool IsMorning;
+
     public void Start()
     {
         timeRate = 1.0f / FullDayLength;
         time = StartTime;
+        IsNight = false;
+        IsMorning = true;
+
     }
 
     private void Update()
-    {
+    {   
+        //Check Day/Night
+        if (time >= 0.75f || time <= 0.2f)
+        {
+            if (IsNight == false && IsMorning ==true)
+            {
+                IsNight = true;
+                IsMorning = false;
+            }
+        }
+        else
+        {
+            if (IsNight == true && IsMorning == false)
+            {
+                IsMorning = true;
+                IsNight = false;
+            }
+            
+        }
+
         //Increment time
         time += timeRate * Time.deltaTime;
 
