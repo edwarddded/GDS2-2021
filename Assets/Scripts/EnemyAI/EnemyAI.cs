@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     public float howClose;
 
     //Enemy Explosion
-    public GameObject exp;
+    //public GameObject exp;
     public float expForce, radius;
 
     // Start is called before the first frame update
@@ -23,8 +23,8 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
-            Destroy(_exp, 3);
+            //GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
+            //Destroy(_exp, 3);
             KnockBack();
             Destroy(gameObject);
         }
