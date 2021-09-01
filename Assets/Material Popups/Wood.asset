@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80012c4bfed50437e8ca26982e859566, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  MaterialName: 
-  description: 
-  image: {fileID: 0}
+  MaterialName: Wood
+  description: Perfect for building a strong tower base
+  image: {fileID: 21300000, guid: 57c5c65fc63d6465fb725cf670db8cf7, type: 3}
