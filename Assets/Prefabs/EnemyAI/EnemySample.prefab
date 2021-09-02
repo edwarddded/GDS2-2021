@@ -124,8 +124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3396606f2f727124daa236511a0aaa9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 8
   howClose: 15
+  EnemyHealth: 5
+  MaterialOfEnemy: {fileID: 6993249079127741733, guid: 4ee01b47f56848945be47c1d79e31b73,
+    type: 3}
+  exp: {fileID: 4472293459428272497, guid: df85828235f414d47a8fdf55e32c6187, type: 3}
   expForce: 200
   radius: 8
 --- !u!1 &4515162319178950103

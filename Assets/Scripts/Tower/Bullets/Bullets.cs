@@ -12,7 +12,7 @@ public class Bullets : MonoBehaviour
     {
         rigi = GetComponent<Rigidbody>();
         rigi.AddForce(transform.forward * speed);
-        
+        Destroy(gameObject, 5f);
     }
 
 

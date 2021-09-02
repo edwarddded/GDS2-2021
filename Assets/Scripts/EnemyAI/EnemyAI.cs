@@ -9,9 +9,11 @@ public class EnemyAI : MonoBehaviour
     private float dist;
     public float moveSpeed;
     public float howClose;
-
+    public int EnemyHealth;
+    private int BulletDamage = 1;
+    public GameObject MaterialOfEnemy;
     //Enemy Explosion
-    //public GameObject exp;
+    public GameObject exp;
     public float expForce, radius;
 
     // Start is called before the first frame update
@@ -23,10 +25,17 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
-            //Destroy(_exp, 3);
+            GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
+            Destroy(_exp, 3);
             KnockBack();
+            Instantiate(MaterialOfEnemy, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
+        }
+        if (other.gameObject.tag == "Bullet")
+        {
+            EnemyHealth -= BulletDamage;
+            KnockBack();
+            Destroy(other.gameObject);
         }
     }
     //Explosion knockBlack
@@ -53,6 +62,13 @@ public class EnemyAI : MonoBehaviour
         {
             transform.LookAt(player);
             GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed);
+        }
+        if (EnemyHealth <=0)
+        {
+            GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
+            Destroy(_exp, 3);
+            Instantiate(MaterialOfEnemy, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(gameObject);
         }
     }
 

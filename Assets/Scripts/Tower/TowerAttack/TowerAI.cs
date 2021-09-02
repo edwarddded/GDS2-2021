@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class TowerAI : MonoBehaviour
 {
-    public GameObject currentTarget;
+    private GameObject currentTarget;
     public Transform TurretHead;
 
     [Header("Tower Attack")]
     public float attackDist;
-    public float attackDamage;
     public float shotCoolDown;
     private float timer;
     public float lookSpeed = 2f;
