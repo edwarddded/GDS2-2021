@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1387936826519243673}
   - component: {fileID: 1387936826519243684}
   - component: {fileID: 1387936826519243675}
+  - component: {fileID: 5230522963080499085}
   - component: {fileID: 1387936826519243674}
   m_Layer: 5
   m_Name: BuildButton
@@ -77,6 +78,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5230522963080499085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387936826519243672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4fd6186c3628f41a9157287f63e3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 0}
+  icon: {fileID: 1387936826777161040}
+  text: {fileID: 1387936826653965939}
 --- !u!114 &1387936826519243674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +135,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1387936826519243675}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5230522963080499085}
+        m_MethodName: StartConstruction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1387936826653965937
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +224,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower
+  m_Text: Placeholder
 --- !u!1 &1387936826777161046
 GameObject:
   m_ObjectHideFlags: 0

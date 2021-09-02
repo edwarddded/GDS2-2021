@@ -6,12 +6,16 @@ public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed;
     public Rigidbody rb;
+    
+    //Restricts inventory / building UI when player is trying to place a tower
+    //This boolean can also be used to restrict other player functions later
+    public bool isBuilding;
 
     Vector3 movement;
 
     private void Start()
     {
-
+        isBuilding = false;
     }
 
     // Update is called once per frame

@@ -74,8 +74,8 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        if (item.amount == 0)
-        items.Remove(item);
+        if (copyItem.amount <= 0)
+        items.Remove(copyItem);
 
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();

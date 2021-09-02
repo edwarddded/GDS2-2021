@@ -9,11 +9,14 @@ public class InventoryUI : MonoBehaviour
     public GameObject buildUI;
 
     Inventory inventory;
+    PlayerMovement playerMovement;
 
     InventorySlot[] slots;
 
     void Start()
     {
+        playerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
+
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;
 
@@ -24,18 +27,28 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Inventory"))
+        if (playerMovement.isBuilding)
         {
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
-            if (inventoryUI.activeSelf == true)
-                buildUI.SetActive(false);
+            buildUI.SetActive(false);
+            inventoryUI.SetActive(false);
         }
-        if (Input.GetButtonDown("Build"))
+
+        if (!playerMovement.isBuilding)
         {
-            buildUI.SetActive(!buildUI.activeSelf);
-            if (buildUI.activeSelf == true)
-                inventoryUI.SetActive(false);
+            if (Input.GetButtonDown("Inventory"))
+            {
+                inventoryUI.SetActive(!inventoryUI.activeSelf);
+                if (inventoryUI.activeSelf == true)
+                    buildUI.SetActive(false);
+            }
+            if (Input.GetButtonDown("Build"))
+            {
+                buildUI.SetActive(!buildUI.activeSelf);
+                if (buildUI.activeSelf == true)
+                    inventoryUI.SetActive(false);
+            }
         }
+
     }
 
     void UpdateUI()
