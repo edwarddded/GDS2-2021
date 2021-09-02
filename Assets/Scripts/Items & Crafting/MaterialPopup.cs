@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MaterialPopup : MonoBehaviour
 {
-    public Materialinfo Popup;
+    public Item item;
     public Text nameText;
     public Text Desc;
     public Image Image;
@@ -13,10 +13,10 @@ public class MaterialPopup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(Popup.name);
-        nameText.text = Popup.MaterialName;
-        Desc.text = Popup.description;
-        Image.sprite = Popup.image;
+        Debug.Log(item.name);
+        nameText.text = item.name;
+        Desc.text = item.desc;
+        Image.sprite = item.icon;
         
     }
 

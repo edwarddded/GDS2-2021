@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9368381f98a974e8294cf59042ba9189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Popup: {fileID: 11400000, guid: 5e86ca601fa424177aa2ec260fb3f30c, type: 2}
+  item: {fileID: 0}
   nameText: {fileID: 1089131290072724733}
   Desc: {fileID: 1846526883295077079}
   Image: {fileID: 6557832399009554046}
@@ -921,7 +921,7 @@ GameObject:
   - component: {fileID: 6993249079127741759}
   - component: {fileID: 6993249079127741758}
   m_Layer: 0
-  m_Name: WoodenStick1
+  m_Name: WoodenStickWithPopup
   m_TagString: stick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1006,7 +1006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa3951fb522b7f499981346416162fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 561803511702483938, guid: e97dfae4868eb8d4ca9761eacbd5e045, type: 3}
+  item: {fileID: 11400000, guid: ea0e2387041e2744c8d35aaf01d1db37, type: 2}
+  player: {fileID: 0}
 --- !u!114 &6993249079127741759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,7 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9368381f98a974e8294cf59042ba9189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Popup: {fileID: 11400000, guid: 5e86ca601fa424177aa2ec260fb3f30c, type: 2}
+  item: {fileID: 11400000, guid: ea0e2387041e2744c8d35aaf01d1db37, type: 2}
   nameText: {fileID: 1089131290072724733}
   Desc: {fileID: 1846526883295077079}
   Image: {fileID: 6557832399009554046}

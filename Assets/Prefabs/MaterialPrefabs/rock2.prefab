@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5657564800742312385}
   - component: {fileID: 7595112414038670603}
   - component: {fileID: -617162218268134590}
+  - component: {fileID: -5072858330963506579}
   m_Layer: 0
   m_Name: rock2
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1283468454881932733, guid: a44d62895795d0d4680347d068acf741, type: 3}
+  - {fileID: -1283468454881932733, guid: 22c56dfac0c79ca48b0451b720825e6d, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,3 +95,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: bca59363b89728d4ab1188c9aadeda3b, type: 2}
   player: {fileID: 0}
+--- !u!114 &-5072858330963506579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243766618002332894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9368381f98a974e8294cf59042ba9189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: bca59363b89728d4ab1188c9aadeda3b, type: 2}
+  nameText: {fileID: 1183024869653660830, guid: 4da2f8f6ba69760469180bcfeb21850e,
+    type: 3}
+  Desc: {fileID: 3232102833510061483, guid: 4da2f8f6ba69760469180bcfeb21850e, type: 3}
+  Image: {fileID: 6459741231296149714, guid: 4da2f8f6ba69760469180bcfeb21850e, type: 3}

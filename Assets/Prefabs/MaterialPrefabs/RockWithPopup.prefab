@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9368381f98a974e8294cf59042ba9189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Popup: {fileID: 11400000, guid: ae296807694cd479888f87d3c7d6f08f, type: 2}
+  item: {fileID: 11400000, guid: bca59363b89728d4ab1188c9aadeda3b, type: 2}
   nameText: {fileID: 1183024869653660830}
   Desc: {fileID: 3232102833510061483}
   Image: {fileID: 6459741231296149714}
@@ -255,7 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa3951fb522b7f499981346416162fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 561803511702483938, guid: e97dfae4868eb8d4ca9761eacbd5e045, type: 3}
+  item: {fileID: 11400000, guid: bca59363b89728d4ab1188c9aadeda3b, type: 2}
+  player: {fileID: 0}
 --- !u!114 &6030246782207102151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9368381f98a974e8294cf59042ba9189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Popup: {fileID: 11400000, guid: ae296807694cd479888f87d3c7d6f08f, type: 2}
+  item: {fileID: 0}
   nameText: {fileID: 1183024869653660830}
   Desc: {fileID: 3232102833510061483}
   Image: {fileID: 6459741231296149714}
