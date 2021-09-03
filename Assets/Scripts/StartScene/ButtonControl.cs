@@ -14,6 +14,11 @@ public class ButtonControl : MonoBehaviour
     {
         Debug.Log("Setting Menu");
     }
+
+    public void MenuButton()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void QuitGame()
     {
         Application.Quit();

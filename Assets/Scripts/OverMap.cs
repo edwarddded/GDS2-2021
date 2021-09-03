@@ -10,8 +10,7 @@ public class OverMap : MonoBehaviour
     {
         if (other.gameObject.tag =="Player")
         {
-            //Destroy(other.gameObject);
-            //SceneManager.LoadScene();
+            SceneManager.LoadScene(3);
             Debug.Log("You dead");
         }
         else
