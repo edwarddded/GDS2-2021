@@ -13,9 +13,15 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 movement;
 
+    //Character jump
+    public float jumpForce = 7;
+    public CapsuleCollider col;
+    public LayerMask groundLayers;
+
     private void Start()
     {
         isBuilding = false;
+        col = GetComponent<CapsuleCollider>();
     }
 
     // Update is called once per frame
@@ -38,6 +44,17 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
 
+        //Player Jump
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, 
+            col.bounds.min.y, col.bounds.center.z), col.radius * .9f, groundLayers);
     }
 
     private void FixedUpdate()
