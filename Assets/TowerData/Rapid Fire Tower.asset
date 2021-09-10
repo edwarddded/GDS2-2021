@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rapid Fire Tower
   icon: {fileID: 21300000, guid: 34278824c1d94b745ba122b37d526e5c, type: 3}
-  towerFrame: {fileID: 0}
+  towerFrame: {fileID: 1500203724669697352, guid: 4135f567978aabd49ac1a556b93e8de5,
+    type: 3}
   towerFinished: {fileID: 7905508585897515934, guid: 619d2b6468c499a46bd986e3ed312c3a,
     type: 3}
   buildTime: 5
