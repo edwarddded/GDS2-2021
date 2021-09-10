@@ -52,9 +52,9 @@ public class UnderConstruction : MonoBehaviour
 
             // Sets the building frame to be in front of the player
             p = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            posX = p.transform.position.x;
-            posY = p.transform.position.y;
-            posZ = p.transform.position.z;
+            posX = p.transform.position.x+1f;
+            posY = p.transform.position.y+1f;
+            posZ = p.transform.position.z+1f;
             // transform.rotation = p.transform.rotation;
             transform.position = new Vector3(posX, posY + heightOffset, posZ) + p.transform.forward*2;
         }
