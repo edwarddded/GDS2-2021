@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 811144704}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -661,6 +661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 820242107}
   - component: {fileID: 820242108}
+  - component: {fileID: 820242109}
   m_Layer: 0
   m_Name: MiniMapCam
   m_TagString: Untagged
@@ -725,6 +726,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &820242109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820242106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d6d004b5dfc492db8fe586ecbbd057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &838131446
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +941,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1467921abcebb954081b08b481dac2ca,
         type: 2}
+    - target: {fileID: 3691460482028600954, guid: 4befaabceb5ef404fb73d5ef41a47d75,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -161
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691460482028600954, guid: 4befaabceb5ef404fb73d5ef41a47d75,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -178
+      objectReference: {fileID: 0}
     - target: {fileID: 3691460482365936903, guid: 4befaabceb5ef404fb73d5ef41a47d75,
         type: 3}
       propertyPath: m_Pivot.x
