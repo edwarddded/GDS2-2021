@@ -7,6 +7,7 @@ public class InventoryUI : MonoBehaviour
     public Transform itemsParent;
     public GameObject inventoryUI;
     public GameObject buildUI;
+    public GameObject tooltip;
 
     Inventory inventory;
     PlayerMovement playerMovement;
@@ -31,6 +32,7 @@ public class InventoryUI : MonoBehaviour
         {
             buildUI.SetActive(false);
             inventoryUI.SetActive(false);
+            tooltip.SetActive(false);
         }
 
         if (!playerMovement.isBuilding)
@@ -39,13 +41,21 @@ public class InventoryUI : MonoBehaviour
             {
                 inventoryUI.SetActive(!inventoryUI.activeSelf);
                 if (inventoryUI.activeSelf == true)
+                {
                     buildUI.SetActive(false);
+                    tooltip.SetActive(false);
+                }
+
             }
             if (Input.GetButtonDown("Build"))
             {
                 buildUI.SetActive(!buildUI.activeSelf);
                 if (buildUI.activeSelf == true)
+                {
                     inventoryUI.SetActive(false);
+                    tooltip.SetActive(false);
+                }
+
             }
         }
 

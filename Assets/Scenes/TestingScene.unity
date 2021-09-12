@@ -911,6 +911,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 979213496, guid: 4befaabceb5ef404fb73d5ef41a47d75, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 1562542914}
     - target: {fileID: 403966147972119624, guid: 4befaabceb5ef404fb73d5ef41a47d75,
         type: 3}
       propertyPath: c

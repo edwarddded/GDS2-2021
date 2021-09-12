@@ -37,7 +37,6 @@ public class BuildButton : MonoBehaviour
                 }
             }
             Debug.Log("Instantiating Tower Frame");
-            HideTooltip();
             Instantiate(tower.towerFrame);
         }
 
