@@ -8,6 +8,7 @@ public class BuildButton : MonoBehaviour
 {
     Inventory inventory;
 
+    public GameObject tooltip;
     public TowerInfo tower;
     public Image icon;
     public Text text;
@@ -36,6 +37,7 @@ public class BuildButton : MonoBehaviour
                 }
             }
             Debug.Log("Instantiating Tower Frame");
+            HideTooltip();
             Instantiate(tower.towerFrame);
         }
 
@@ -55,5 +57,22 @@ public class BuildButton : MonoBehaviour
 
         Debug.Log("You don't have enough " + item.name + " to build this.");
         return false;
+    }
+
+    public void ShowTooltip()
+    {
+        if(tower!= null)
+        {
+            tooltip.GetComponent<BuildTooltip>().UpdateTooltip(tower);
+            tooltip.SetActive(true);
+        }
+    }
+
+    public void HideTooltip()
+    {
+        if(tower!= null)
+        {
+            tooltip.SetActive(false);
+        }
     }
 }
