@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 8183784788135078520}
   - component: {fileID: 8183784788135078527}
   m_Layer: 0
-  m_Name: Cannon tower
+  m_Name: CannonTower_Prefabs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed5c426475fbd34982e9ee8c5993579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefabs: {fileID: 2519903863778713916, guid: ab6b27bba094f1c46bf3b88cab98848f,
+  BulletPrefabs: {fileID: 2794444396135797055, guid: 629d2739146511d42ad471c1cb02b3b4,
     type: 3}
   muzzle: {fileID: 8183784787865471378}
 --- !u!114 &8183784788135078527

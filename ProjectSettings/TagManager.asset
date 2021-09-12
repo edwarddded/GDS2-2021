@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Bullet
   - OverMap
+  - Grenade
+  - Megaball
   layers:
   - Default
   - TransparentFX

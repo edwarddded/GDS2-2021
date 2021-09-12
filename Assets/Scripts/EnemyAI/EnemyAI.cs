@@ -9,8 +9,7 @@ public class EnemyAI : MonoBehaviour
     private float dist;
     public float moveSpeed;
     public float howClose;
-    public int EnemyHealth;
-    private int BulletDamage = 1;
+    public float EnemyHealth;
     public GameObject MaterialOfEnemy;
     //Enemy Explosion
     public GameObject exp;
@@ -31,12 +30,38 @@ public class EnemyAI : MonoBehaviour
             Instantiate(MaterialOfEnemy, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
+        // The damage that bullet casue
         if (other.gameObject.tag == "Bullet")
         {
-            EnemyHealth -= BulletDamage;
+            float CauseDamage = other.gameObject.GetComponent<Bullets>().damage;
+            EnemyHealth -= CauseDamage;
             KnockBack();
             Destroy(other.gameObject);
         }
+        //The damage that grenade cause
+        if (other.gameObject.tag =="Grenade")
+        {
+            float Causedamage = other.gameObject.GetComponent<Grenade>().damage;
+            EnemyHealth -= Causedamage;
+        }
+        if (other.gameObject.tag == "Megaball")
+        {
+            float Causedamage = other.gameObject.GetComponent<MegaBall>().damage;
+            EnemyHealth -= Causedamage;
+            if (moveSpeed >=2)
+            {
+                StartCoroutine(slowdown());
+            } 
+        }
+    }
+
+    IEnumerator slowdown()
+    {
+        moveSpeed = moveSpeed / 2;
+        Debug.Log(moveSpeed);
+        yield return new WaitForSeconds(4);
+        moveSpeed = moveSpeed * 2;
+        Debug.Log(moveSpeed);
     }
     //Explosion knockBlack
     void KnockBack()

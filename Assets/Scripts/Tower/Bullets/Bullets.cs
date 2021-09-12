@@ -6,6 +6,7 @@ public class Bullets : MonoBehaviour
 {
     private float speed = 1000f;
     private Rigidbody rigi;
+    public float damage;
 
     // Start is called before the first frame update
     void Start()
@@ -14,7 +15,4 @@ public class Bullets : MonoBehaviour
         rigi.AddForce(transform.forward * speed);
         Destroy(gameObject, 5f);
     }
-
-
-
 }

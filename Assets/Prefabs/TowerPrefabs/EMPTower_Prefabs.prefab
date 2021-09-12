@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 6159425679031828588}
   - component: {fileID: 6159425679031828589}
   m_Layer: 0
-  m_Name: EMP tower1
+  m_Name: EMPTower_Prefabs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ce624ffe0d4de4d8f53b76e0522bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefabs: {fileID: 2519903863778713916, guid: ab6b27bba094f1c46bf3b88cab98848f,
+  BulletPrefabs: {fileID: 294618765186207225, guid: fc2406f737f661f40b18e457dcb6f3d8,
     type: 3}
   muzzle1: {fileID: 6159425677452615182}
   muzzle2: {fileID: 6159425678963706140}
