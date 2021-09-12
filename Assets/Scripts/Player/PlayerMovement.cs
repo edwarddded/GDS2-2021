@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public CapsuleCollider col;
     public LayerMask groundLayers;
 
+    public GameObject map;
     private void Start()
     {
         isBuilding = false;
@@ -48,6 +49,15 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (map != null)
+            {
+                bool isActive = map.activeSelf;
+                map.SetActive(!isActive);
+            }
         }
     }
 
