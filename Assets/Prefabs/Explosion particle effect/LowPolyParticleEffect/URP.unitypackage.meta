@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Model/Tower/Materials.meta
+guid: 060ee275c78463b4283c4d126cdd9f08
+folderAsset: yes
+=======
 guid: a3f1ab1cf913b2b41bdea57a66793874
+>>>>>>> TowerTooltips:Assets/Prefabs/Explosion particle effect/LowPolyParticleEffect/URP.unitypackage.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
