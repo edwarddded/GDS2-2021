@@ -12,6 +12,7 @@ TagManager:
   - Grenade
   - Megaball
   - Enemy2
+  - Tower
   layers:
   - Default
   - TransparentFX
