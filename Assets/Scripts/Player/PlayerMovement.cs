@@ -19,10 +19,14 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayers;
 
     public GameObject map;
+
+    //Player animation
+    private Animator PlayerAnimator;
     private void Start()
     {
         isBuilding = false;
         col = GetComponent<CapsuleCollider>();
+        PlayerAnimator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -60,16 +64,29 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Enemy2")
+        {
+            StartCoroutine(PlayerFreeze());
+        }
+    }
+    IEnumerator PlayerFreeze()
+    {
+        movementSpeed = 0;
+        yield return new WaitForSeconds(0.75f);
+        movementSpeed = 10;
+    }
     private bool IsGrounded()
     {
         return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, 
             col.bounds.min.y, col.bounds.center.z), col.radius * .9f, groundLayers);
     }
-
     private void FixedUpdate()
     {
         movement.Normalize();
         rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
+        PlayerAnimator.SetFloat("Run", Input.GetAxis("Horizontal"));
+        PlayerAnimator.SetFloat("Run", Input.GetAxis("Vertical"));
     }
 }

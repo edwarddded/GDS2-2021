@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7023200881108850998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0169, z: 0.022}
+  m_LocalPosition: {x: 0, y: 0.0115, z: 0.022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7421319212159238436}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 7023200880903004069}
   - component: {fileID: 5812896455769963186}
   m_Layer: 0
-  m_Name: Rapid fire tower
+  m_Name: RapidfireTower_Prefabs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 7905508585897515934}
   m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 74.68143, y: 16.02, z: 139.74257}
-  m_LocalScale: {x: 150, y: 150, z: 150}
+  m_LocalScale: {x: 90, y: 90, z: 90}
   m_Children:
   - {fileID: 7023200881108851145}
   m_Father: {fileID: 0}

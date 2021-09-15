@@ -15,10 +15,12 @@ public class EnemyAI : MonoBehaviour
     public GameObject exp;
     public float expForce, radius;
 
+    private Animator Ani;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        Ani = gameObject.GetComponent<Animator>();
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -86,6 +88,7 @@ public class EnemyAI : MonoBehaviour
         if (dist <= howClose)
         {
             transform.LookAt(player);
+            Ani.SetBool("Run Forward", true);
             GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed);
         }
         if (EnemyHealth <=0)

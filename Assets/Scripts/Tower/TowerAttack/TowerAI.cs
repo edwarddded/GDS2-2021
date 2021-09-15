@@ -46,7 +46,7 @@ public class TowerAI : MonoBehaviour
         float distAway = Mathf.Infinity;
         for (int i = 0; i < colls.Length; i++)
         {
-            if (colls[i].tag == "Enemy")
+            if (colls[i].tag == "Enemy" || colls[i].tag == "Enemy2")
             {
                 float dist = Vector3.Distance(transform.position, colls[i].transform.position);
                 if (dist<distAway)

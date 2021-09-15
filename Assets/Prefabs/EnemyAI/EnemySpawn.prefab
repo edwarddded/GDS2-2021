@@ -43,7 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f6ae92e988c3e45a280cde87b8e08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 3466819314163792657, guid: d9a71cde7cbacb24f84c861a26e242af, type: 3}
-  xPos: 0
-  zPos: 0
+  Enemy1: {fileID: 7514070428594893905, guid: 7bda6c2d11d85254ca23d744225e0595, type: 3}
+  Enemy2: {fileID: 3734524484416692377, guid: f0cf1f5b5101d364fa0b1f42846aa03e, type: 3}
+  xPosMin: 0
+  xPosMax: 0
+  zPosMin: 0
+  zPosMax: 0
   enemyCount: 0
+  isSpawnEnemy: 0

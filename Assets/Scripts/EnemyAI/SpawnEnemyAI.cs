@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnEnemyAI : MonoBehaviour
 {
-    public GameObject Enemy;
+    public GameObject Enemy1, Enemy2;
 
     [Header("EnemySpawnRange")]
     public int xPosMin;
@@ -44,7 +44,8 @@ public class SpawnEnemyAI : MonoBehaviour
         {
             xPos = Random.Range(xPosMin, xPosMax);
             zPos = Random.Range(zPosMin, zPosMax);
-            Instantiate(Enemy, new Vector3(transform.position.x + xPos, transform.position.y, transform.position.z + zPos), Quaternion.identity);
+            Instantiate(Enemy1, new Vector3(transform.position.x + xPos, transform.position.y, transform.position.z + zPos), Quaternion.identity);
+            Instantiate(Enemy2, new Vector3(transform.position.x + xPos, transform.position.y, transform.position.z + zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount += 1;    
         }       
