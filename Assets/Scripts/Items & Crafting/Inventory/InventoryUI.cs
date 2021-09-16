@@ -28,6 +28,9 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (buildUI.activeSelf == false)
+            tooltip.SetActive(false);
+
         if (playerMovement.isBuilding)
         {
             buildUI.SetActive(false);
