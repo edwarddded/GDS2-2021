@@ -45,9 +45,11 @@ GameObject:
   - component: {fileID: 7023200880903004066}
   - component: {fileID: 7023200880903004069}
   - component: {fileID: 5812896455769963186}
+  - component: {fileID: 4702533887930018505}
+  - component: {fileID: -8677403557709094031}
   m_Layer: 0
   m_Name: RapidfireTower_Prefabs
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,3 +181,38 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4702533887930018505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905508585897515934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec54b3c665397640a50e090120b5639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refundedItems:
+  - {fileID: 11400000, guid: bca59363b89728d4ab1188c9aadeda3b, type: 2}
+  - {fileID: 11400000, guid: ea0e2387041e2744c8d35aaf01d1db37, type: 2}
+  itemAmounts: 0300000001000000
+  isSelected: 0
+--- !u!114 &-8677403557709094031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905508585897515934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.49521753, g: 0.990566, b: 0.051397298, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

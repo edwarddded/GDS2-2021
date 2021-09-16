@@ -5,19 +5,36 @@ using UnityEngine;
 public class TowerRefund : MonoBehaviour
 {
     Inventory inventory;
+
     public Item[] refundedItems;
     public int[] itemAmounts;
 
-    bool refunded = false;
+    Outline outline;
+
+    public bool isSelected = false;
+    bool hasRefunded = false;
 
     void Start()
     {
         inventory = Inventory.instance;
+        outline = GetComponent<Outline>();
+    }
+
+    private void Update()
+    {
+        if (isSelected)
+            outline.enabled = true;
+        else
+            outline.enabled = false;
+
+        if (isSelected && Input.GetKeyDown("r") && !hasRefunded)
+            Refund();
     }
 
     void Refund()
     {
-        refunded = true;
+        Debug.Log("refunding tower");
+        hasRefunded = true;
 
         for(int i = 0; i < refundedItems.Length; i++)
         {
@@ -26,5 +43,6 @@ public class TowerRefund : MonoBehaviour
                 inventory.Add(refundedItems[i]);
             }
         }
+        Destroy(gameObject);
     }
 }
