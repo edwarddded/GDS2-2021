@@ -105,9 +105,11 @@ GameObject:
   - component: {fileID: 6159425679031828578}
   - component: {fileID: 6159425679031828588}
   - component: {fileID: 6159425679031828589}
+  - component: {fileID: 5473449555552027733}
+  - component: {fileID: 808083583051607875}
   m_Layer: 0
   m_Name: EMPTower_Prefabs
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -243,3 +245,38 @@ MonoBehaviour:
   lookSpeed: 2
   showRange: 1
   shotScript: {fileID: 0}
+--- !u!114 &5473449555552027733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465978108582424291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec54b3c665397640a50e090120b5639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refundedItems:
+  - {fileID: 11400000, guid: bca59363b89728d4ab1188c9aadeda3b, type: 2}
+  - {fileID: 11400000, guid: ea0e2387041e2744c8d35aaf01d1db37, type: 2}
+  itemAmounts: 0400000003000000
+  isSelected: 0
+--- !u!114 &808083583051607875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465978108582424291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.4745098, g: 1, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
