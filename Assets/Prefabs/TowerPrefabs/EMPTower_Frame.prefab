@@ -101,6 +101,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EMPTower_Frame
       objectReference: {fileID: 0}
+    - target: {fileID: 6465978108582424291, guid: 2ab73a9d609932d42ae9a77a43b53ccc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6159425679031828588, guid: 2ab73a9d609932d42ae9a77a43b53ccc, type: 3}
     - {fileID: 6159425679031828589, guid: 2ab73a9d609932d42ae9a77a43b53ccc, type: 3}

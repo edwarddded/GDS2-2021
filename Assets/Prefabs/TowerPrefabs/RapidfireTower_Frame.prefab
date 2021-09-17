@@ -86,6 +86,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RapidfireTower_Frame
       objectReference: {fileID: 0}
+    - target: {fileID: 7905508585897515934, guid: 619d2b6468c499a46bd986e3ed312c3a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8554304214427728459, guid: 619d2b6468c499a46bd986e3ed312c3a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
