@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float movementSpeed;
+    [SerializeField] private float movementSpeed;
     public Rigidbody rb;
     
     //Restricts inventory / building UI when player is trying to place a tower
     //This boolean can also be used to restrict other player functions later
     public bool isBuilding;
+    //*****
+    private Vector3 movedirection;
+    public CharacterController controller;
 
-    Vector3 movement;
+    public float trunSmoothTime = 0.1f;
+    float turnSmoothVelocity;
+    public Transform cam;
 
-    //Character jump
-    public float jumpForce = 7;
-    public CapsuleCollider col;
-    public LayerMask groundLayers;
+    //*****
+    private Vector3 velocity;
+    [SerializeField] private bool isGrounded;
+    [SerializeField] private float groundCheckDistance;
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private float gravity;
 
+    [SerializeField] private float jumpHeight;
+    //*****
     public GameObject map;
 
     //Player animation
@@ -25,36 +34,17 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         isBuilding = false;
-        col = GetComponent<CapsuleCollider>();
+        //col = GetComponent<CapsuleCollider>();
         PlayerAnimator = GetComponentInChildren<Animator>();
+        //*****
+        controller = GetComponent<CharacterController>();
+        //*****
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Player rotation based on where the mouse is
-        Plane playerPlane = new Plane(Vector3.up, transform.position);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        float hitDist = 0.0f;
-
-        if (playerPlane.Raycast(ray, out hitDist))
-        {
-            Vector3 targetPoint = ray.GetPoint(hitDist);
-            Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
-            targetRotation.x = 0;
-            targetRotation.z = 0;
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 7f * Time.deltaTime);
-        }
-
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.z = Input.GetAxisRaw("Vertical");
-
-        //Player Jump
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
-
+        Move();
         if (Input.GetKeyDown(KeyCode.M))
         {
             if (map != null)
@@ -63,6 +53,62 @@ public class PlayerMovement : MonoBehaviour
                 map.SetActive(!isActive);
             }
         }
+    }
+
+    private void Move()
+    {
+        isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
+
+        if (isGrounded && velocity.y< 0)
+        {
+            velocity.y = -2f;
+        }
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        if (direction != Vector3.zero)
+        {
+            PlayerAnimator.SetBool("Run", true);
+            Debug.Log("Move");
+        }
+        else if (direction == Vector3.zero)
+        {
+            PlayerAnimator.SetBool("Run", false);
+        }
+
+        if (direction.magnitude >= 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, trunSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            controller.Move(moveDir.normalized * movementSpeed * Time.deltaTime);
+        }
+
+        if (isGrounded)
+        {
+            PlayerAnimator.SetBool("isGround", true);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+                PlayerAnimator.SetTrigger("Jump");
+            }
+        }
+        else if (!isGrounded)
+        {
+            PlayerAnimator.SetBool("isGround", false);
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void Jump()
+    {
+        velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+        
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -77,16 +123,9 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         movementSpeed = 10;
     }
-    private bool IsGrounded()
-    {
-        return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, 
-            col.bounds.min.y, col.bounds.center.z), col.radius * .9f, groundLayers);
-    }
+
     private void FixedUpdate()
     {
-        movement.Normalize();
-        rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
-        PlayerAnimator.SetFloat("Run", Input.GetAxis("Horizontal"));
-        PlayerAnimator.SetFloat("Run", Input.GetAxis("Vertical"));
+  
     }
 }
