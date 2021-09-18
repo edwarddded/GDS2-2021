@@ -1179,7 +1179,7 @@ MonoBehaviour:
   moveSpeed: 50
   howClose: 40
   EnemyHealth: 5
-  MaterialOfEnemy: {fileID: 6993249079127741733, guid: 4ee01b47f56848945be47c1d79e31b73,
+  MaterialOfEnemy: {fileID: 2972258869829250989, guid: 94a36c76f8aeeae4eb4c114336e2d3d0,
     type: 3}
   exp: {fileID: 3824188568226462268, guid: ed48bb5dacfaafa40a785b8afe31c245, type: 3}
   expForce: 200
