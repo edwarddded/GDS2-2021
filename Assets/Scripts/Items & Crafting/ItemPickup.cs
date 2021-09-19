@@ -23,7 +23,7 @@ public class ItemPickup : MonoBehaviour
 
         float distance = Vector3.Distance(this.transform.position, player.transform.position);
 
-            if (distance < 2)
+            if (distance < 3)
             {
             outline.enabled = true;
             }
@@ -31,7 +31,7 @@ public class ItemPickup : MonoBehaviour
         {
             outline.enabled = false;
         }
-        if (Input.GetKeyDown("e") && distance <2)
+        if (Input.GetKeyDown("e") && distance <3)
         {
          
             //Object is only destroyed if it is successfully added to the inventory
