@@ -13,6 +13,8 @@ public class ItemPickup : MonoBehaviour
     public GameObject player;
     public Outline outline;
 
+    public GameObject uiObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +28,15 @@ public class ItemPickup : MonoBehaviour
     void Update()
     {
         if (isSelected)
+        {
             outline.enabled = true;
+            uiObject.SetActive(true);
+        }
         else
+        {
             outline.enabled = false;
+            uiObject.SetActive(false);
+        }
 
         if (Input.GetKeyDown("e") && isSelected)
         {

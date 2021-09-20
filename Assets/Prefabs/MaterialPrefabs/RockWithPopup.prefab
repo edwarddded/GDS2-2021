@@ -114,7 +114,6 @@ GameObject:
   - component: {fileID: 6030246782207102147}
   - component: {fileID: 6030246782207102150}
   - component: {fileID: 6030246782207102146}
-  - component: {fileID: 6030246782207102151}
   - component: {fileID: 7415623043804447299}
   m_Layer: 0
   m_Name: RockWithPopup
@@ -243,18 +242,6 @@ MonoBehaviour:
   isSelected: 0
   player: {fileID: 0}
   outline: {fileID: 0}
---- !u!114 &6030246782207102151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546064181440349271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb184a19f67d54b789fa70e910d216bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   uiObject: {fileID: 4557369703402873971}
 --- !u!114 &7415623043804447299
 MonoBehaviour:

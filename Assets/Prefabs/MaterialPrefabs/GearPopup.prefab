@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: -7736154812856620805}
   - component: {fileID: 1933448039685997917}
   - component: {fileID: 4781576132659329586}
-  - component: {fileID: 5656427914207557307}
   - component: {fileID: 8673115348376290416}
   m_Layer: 0
   m_Name: GearPopup
@@ -218,18 +217,6 @@ MonoBehaviour:
   isSelected: 0
   player: {fileID: 0}
   outline: {fileID: 0}
---- !u!114 &5656427914207557307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2972258869829250989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb184a19f67d54b789fa70e910d216bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   uiObject: {fileID: 9077188116557520459}
 --- !u!114 &8673115348376290416
 MonoBehaviour:

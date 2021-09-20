@@ -918,7 +918,6 @@ GameObject:
   - component: {fileID: 6993249079127741731}
   - component: {fileID: 6993249079127741728}
   - component: {fileID: 6993249079127741732}
-  - component: {fileID: 6993249079127741758}
   - component: {fileID: 7198677640797060614}
   m_Layer: 0
   m_Name: WoodenStickWithPopup
@@ -1010,18 +1009,6 @@ MonoBehaviour:
   isSelected: 0
   player: {fileID: 0}
   outline: {fileID: 7198677640797060614}
---- !u!114 &6993249079127741758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6993249079127741733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb184a19f67d54b789fa70e910d216bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   uiObject: {fileID: 5355286620677620686}
 --- !u!114 &7198677640797060614
 MonoBehaviour:
