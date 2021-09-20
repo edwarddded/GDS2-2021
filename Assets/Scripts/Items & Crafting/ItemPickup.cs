@@ -6,6 +6,10 @@ public class ItemPickup : MonoBehaviour
     // This variable contains data used in the inventory system
     public Item item;
 
+    //bool used by item interaction script
+    //allows item to be picked up if in range
+    public bool isSelected;
+
     public GameObject player;
     public Outline outline;
 
@@ -15,29 +19,23 @@ public class ItemPickup : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         outline = GetComponent<Outline>();
         outline.enabled = false;
+        isSelected = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        float distance = Vector3.Distance(this.transform.position, player.transform.position);
-
-            if (distance < 3)
-            {
+        if (isSelected)
             outline.enabled = true;
-            }
         else
-        {
             outline.enabled = false;
-        }
-        if (Input.GetKeyDown("e") && distance <3)
+
+        if (Input.GetKeyDown("e") && isSelected)
         {
-         
             //Object is only destroyed if it is successfully added to the inventory
             if (Inventory.instance.Add(item))
             {
-                Debug.Log(this + "been picked");
+                Debug.Log(this + "been picked up");
                 Destroy(this.gameObject);
             }
             

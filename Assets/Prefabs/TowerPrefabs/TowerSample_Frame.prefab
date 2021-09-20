@@ -81,6 +81,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerSample_Frame
       objectReference: {fileID: 0}
+    - target: {fileID: 6835318823015819385, guid: bdf6898270615104e902ce761ed5026e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8020618402198364285, guid: bdf6898270615104e902ce761ed5026e,
         type: 3}
       propertyPath: m_RootOrder
@@ -144,6 +149,8 @@ PrefabInstance:
     - {fileID: 5822757554838260896, guid: bdf6898270615104e902ce761ed5026e, type: 3}
     - {fileID: 6493319026605376495, guid: bdf6898270615104e902ce761ed5026e, type: 3}
     - {fileID: 3160453816329731728, guid: bdf6898270615104e902ce761ed5026e, type: 3}
+    - {fileID: 6330521795182713538, guid: bdf6898270615104e902ce761ed5026e, type: 3}
+    - {fileID: 7605374104127701921, guid: bdf6898270615104e902ce761ed5026e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bdf6898270615104e902ce761ed5026e, type: 3}
 --- !u!1 &6288145614816539616 stripped
 GameObject:

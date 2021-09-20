@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 811144704}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4570,7 +4570,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92b273d5db6d3348b4bb464f623c505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRange: 4
+  towerInteractRange: 5
+  itemInteractRange: 5
 --- !u!1001 &1666355381420851291
 PrefabInstance:
   m_ObjectHideFlags: 0

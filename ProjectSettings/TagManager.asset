@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - stick
-  - Rock
   - Enemy
   - Bullet
   - OverMap
@@ -13,6 +11,7 @@ TagManager:
   - Megaball
   - Enemy2
   - Tower
+  - Item
   layers:
   - Default
   - TransparentFX

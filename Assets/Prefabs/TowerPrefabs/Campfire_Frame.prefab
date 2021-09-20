@@ -41,6 +41,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Campfire_Frame
       objectReference: {fileID: 0}
+    - target: {fileID: 3736498661591827221, guid: b27a079ddb4cb014597b94af9b33f2e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4076150261324126639, guid: b27a079ddb4cb014597b94af9b33f2e3,
         type: 3}
       propertyPath: m_RootOrder

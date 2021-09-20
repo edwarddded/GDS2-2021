@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 3249699855267635054}
   m_Layer: 0
   m_Name: MetalCrystalWithPopup
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 66029fc4589535441a024e9e38330b90, type: 2}
+  isSelected: 0
   player: {fileID: 0}
   outline: {fileID: 0}
 --- !u!54 &-1969445566208186106

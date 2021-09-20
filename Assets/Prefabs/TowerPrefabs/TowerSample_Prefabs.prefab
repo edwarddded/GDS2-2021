@@ -231,9 +231,11 @@ GameObject:
   - component: {fileID: 1943951440090024373}
   - component: {fileID: 3281380978783444389}
   - component: {fileID: 3535912136481489092}
+  - component: {fileID: 6330521795182713538}
+  - component: {fileID: 7605374104127701921}
   m_Layer: 0
-  m_Name: TowerSample
-  m_TagString: Untagged
+  m_Name: TowerSample_Prefabs
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,6 +366,41 @@ MonoBehaviour:
   BulletPrefabs: {fileID: 2519903863778713916, guid: ab6b27bba094f1c46bf3b88cab98848f,
     type: 3}
   muzzle: {fileID: 4053899053574737153}
+--- !u!114 &6330521795182713538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835318823015819385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec54b3c665397640a50e090120b5639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refundedItems:
+  - {fileID: 11400000, guid: ea0e2387041e2744c8d35aaf01d1db37, type: 2}
+  - {fileID: 11400000, guid: bca59363b89728d4ab1188c9aadeda3b, type: 2}
+  itemAmounts: 0200000002000000
+  isSelected: 0
+--- !u!114 &7605374104127701921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835318823015819385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.47058824, g: 1, b: 0, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8485521042798254051
 GameObject:
   m_ObjectHideFlags: 0

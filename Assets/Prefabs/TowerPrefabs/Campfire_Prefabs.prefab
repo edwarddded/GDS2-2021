@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4547470611696764265}
   - component: {fileID: 4547470611696764270}
   m_Layer: 0
-  m_Name: Campfire_02
+  m_Name: Campfire_Prefabs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

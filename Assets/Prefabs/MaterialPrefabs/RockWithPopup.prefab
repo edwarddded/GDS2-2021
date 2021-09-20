@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 7415623043804447299}
   m_Layer: 0
   m_Name: RockWithPopup
-  m_TagString: Rock
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: bca59363b89728d4ab1188c9aadeda3b, type: 2}
+  isSelected: 0
   player: {fileID: 0}
   outline: {fileID: 0}
 --- !u!114 &6030246782207102151

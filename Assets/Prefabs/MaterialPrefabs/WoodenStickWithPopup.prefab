@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 7198677640797060614}
   m_Layer: 0
   m_Name: WoodenStickWithPopup
-  m_TagString: stick
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1007,6 +1007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: ea0e2387041e2744c8d35aaf01d1db37, type: 2}
+  isSelected: 0
   player: {fileID: 0}
   outline: {fileID: 7198677640797060614}
 --- !u!114 &6993249079127741758
