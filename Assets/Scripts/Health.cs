@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -9,13 +10,22 @@ public class Health : MonoBehaviour
     //Please let me (Kevin) know if there is any issue with the script / code
 
     private int currentHealth;
-    public int maxHealth;
-    public Image healthBar;
+    public int maxHealth = 20;
+
+    public Healthbar healthbar;
+
+    [Header("Add the splatter effect")]
+    [SerializeField] private Image RedSplatterImage = null;
+    [SerializeField] private Image RedEffect = null;
+    [SerializeField] private float hurtTimer = 0.3f;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        healthbar.setMaxHealth(maxHealth);
+        RedSplatterImage.enabled = false;
+        RedEffect.enabled = false;
     }
 
     private void Update()
@@ -24,10 +34,17 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
             Die();
     }
-
+    public void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            TakeDamage(2);
+        }
+    }
     public void TakeDamage(int damage)
     {
         // This is to prevent the GameObject's health from going into a negative value when taking damage
+        StartCoroutine(HurtFlash());
         if((currentHealth - damage) < 0)
         {
             currentHealth = 0;
@@ -57,14 +74,23 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        // 
+        SceneManager.LoadScene(3);
     }
 
+    IEnumerator HurtFlash()
+    {
+        RedSplatterImage.enabled = true;
+        RedEffect.enabled = true;
+        yield return new WaitForSeconds(hurtTimer);
+        RedSplatterImage.enabled = false;
+        RedEffect.enabled = false;
+    }
     private void UpdateHealthBar()
     {
         // Only the player has a health bar so a null check is needed
         // To prevent the game from breaking
-        if(healthBar != null)
-        healthBar.fillAmount = (float) currentHealth / maxHealth;
+        if (healthbar != null)
+            healthbar.setHealth(currentHealth);
+        
     }
 }
