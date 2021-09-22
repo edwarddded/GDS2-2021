@@ -43,8 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f6ae92e988c3e45a280cde87b8e08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy1: {fileID: 7514070428594893905, guid: 7bda6c2d11d85254ca23d744225e0595, type: 3}
-  Enemy2: {fileID: 3734524484416692377, guid: f0cf1f5b5101d364fa0b1f42846aa03e, type: 3}
+  Enemy1: {fileID: 6661907522102605461, guid: a2171d6d51a60bb44b6e6a3febb62612, type: 3}
+  Enemy2: {fileID: 922623616582476345, guid: e0af7c9208e8a81468b2e359922a4bda, type: 3}
+  Enemy3: {fileID: 2996758399730159748, guid: 8073d9a1aef7de04bbfde72d91ee0a40, type: 3}
+  Enemy4: {fileID: 7552024200410324125, guid: b57b2a87ff45990429e0638194d29344, type: 3}
   xPosMin: 0
   xPosMax: 0
   zPosMin: 0

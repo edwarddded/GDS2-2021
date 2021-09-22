@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     //This health script should be reusable on all GameObjects that need health
     //Please let me (Kevin) know if there is any issue with the script / code
 
-    private int currentHealth;
+    public int currentHealth;
     public int maxHealth = 20;
 
     public Healthbar healthbar;
@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
     [SerializeField] private Image RedSplatterImage = null;
     [SerializeField] private Image RedEffect = null;
     [SerializeField] private float hurtTimer = 0.3f;
+    [SerializeField] private Animator PlayerAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class Health : MonoBehaviour
         healthbar.setMaxHealth(maxHealth);
         RedSplatterImage.enabled = false;
         RedEffect.enabled = false;
+        PlayerAnimator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -74,9 +76,15 @@ public class Health : MonoBehaviour
 
     void Die()
     {
+        StartCoroutine(PlayerDie());
+        
+    }
+    IEnumerator PlayerDie()
+    {
+        PlayerAnimator.SetTrigger("Die");
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(3);
     }
-
     IEnumerator HurtFlash()
     {
         RedSplatterImage.enabled = true;
@@ -90,7 +98,6 @@ public class Health : MonoBehaviour
         // Only the player has a health bar so a null check is needed
         // To prevent the game from breaking
         if (healthbar != null)
-            healthbar.setHealth(currentHealth);
-        
+            healthbar.setHealth(currentHealth);    
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnEnemyAI : MonoBehaviour
 {
-    public GameObject Enemy1, Enemy2;
+    public GameObject Enemy1, Enemy2, Enemy3, Enemy4;
 
     [Header("EnemySpawnRange")]
     public int xPosMin;
@@ -29,8 +29,12 @@ public class SpawnEnemyAI : MonoBehaviour
         bool Morning = GameObject.Find("DayNightCycle").GetComponent<DayNightCycle>().IsMorning;
         if (Night && !isSpawnEnemy)
         {
-            StartCoroutine(EnemyDrop());
-            isSpawnEnemy = true;
+            int Days = GameObject.Find("DayNightCycle").GetComponent<DayNightCycle>().days;
+            if (Days == 1 || Days == 5 || Days == 10 || Days == 20)
+            {
+                StartCoroutine(EnemyDrop());
+                isSpawnEnemy = true;
+            }
         }
         if (Morning && isSpawnEnemy)
         {
@@ -40,7 +44,7 @@ public class SpawnEnemyAI : MonoBehaviour
     }
     IEnumerator EnemyDrop()
     {
-        while (enemyCount <5)
+        while (enemyCount <3)
         {
             xPos = Random.Range(xPosMin, xPosMax);
             zPos = Random.Range(zPosMin, zPosMax);

@@ -88,7 +88,7 @@ public class EnemyAI : MonoBehaviour
         if (dist <= howClose)
         {
             transform.LookAt(player);
-            Ani.SetBool("Run Forward", true);
+            Ani.SetBool("Run", true);
             GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed);
         }
         if (EnemyHealth <=0)

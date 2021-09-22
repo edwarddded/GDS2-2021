@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed;
+    public float movementSpeed = 6;
     public Rigidbody rb;
     
     //Restricts inventory / building UI when player is trying to place a tower
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight;
     //*****
     public GameObject map;
-
+    private float Playerhealth;
     //Player animation
     private Animator PlayerAnimator;
     private void Start()
@@ -39,12 +39,18 @@ public class PlayerMovement : MonoBehaviour
         //*****
         controller = GetComponent<CharacterController>();
         //*****
+        Playerhealth = gameObject.GetComponent<Health>().currentHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if (Playerhealth>0)
+        {
+            Sprint();
+            Move();
+        }
+        
         if (Input.GetKeyDown(KeyCode.M))
         {
             if (map != null)
@@ -58,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
-
+        //Ground check
         if (isGrounded && velocity.y< 0)
         {
             velocity.y = -2f;
@@ -67,13 +73,20 @@ public class PlayerMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
 
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-        if (direction != Vector3.zero)
+
+        if (direction != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
         {
+            PlayerAnimator.SetBool("Walk", true);
+            Debug.Log("Walk");
+        }
+        else if (direction != Vector3.zero && Input.GetKey (KeyCode.LeftShift))
+        {   
+            
             PlayerAnimator.SetBool("Run", true);
-            Debug.Log("Move");
         }
         else if (direction == Vector3.zero)
         {
+            PlayerAnimator.SetBool("Walk", false);
             PlayerAnimator.SetBool("Run", false);
         }
 
@@ -104,7 +117,17 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
-
+    private void Sprint()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            movementSpeed = 15f;
+        }
+        else if (!Input.GetKey(KeyCode.LeftShift))
+        {
+            movementSpeed = 6f;
+        }
+    }
     private void Jump()
     {
         velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
