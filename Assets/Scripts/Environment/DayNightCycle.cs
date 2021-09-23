@@ -38,6 +38,8 @@ public class DayNightCycle : MonoBehaviour
 
     public int days;
     public Text texts;
+
+    public bool check;
     public void Start()
     {
         timeRate = 1.0f / FullDayLength;
@@ -46,7 +48,7 @@ public class DayNightCycle : MonoBehaviour
         IsMorning = true;
         days = 1;
 
-
+        check = false;
     }
 
     private void Update()
@@ -86,6 +88,12 @@ public class DayNightCycle : MonoBehaviour
             {
                 dayTime = (time - 0.2f) * (1 / 0.55f);
             }
+            if (check == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Day");
+                FindObjectOfType<AudioManager>().Stop("Night");
+                check = true;
+            }
         }
         if (IsNight == true)
         {
@@ -100,6 +108,12 @@ public class DayNightCycle : MonoBehaviour
             if (time <= 0.2f)
             {
                 nightTime = (time + 0.25f) * (1 / 0.45f);
+            }
+            if(check == true)
+            {
+                FindObjectOfType<AudioManager>().Play("Night");
+                FindObjectOfType<AudioManager>().Stop("Day");
+                check = false;
             }
         }
         if (time >= 1.0f)

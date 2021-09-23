@@ -31,6 +31,10 @@ public class PlayerMovement : MonoBehaviour
     private float Playerhealth;
     //Player animation
     private Animator PlayerAnimator;
+
+    public bool Cwalk;
+    public bool Crun;
+    public bool Cjump;
     private void Start()
     {
         isBuilding = false;
@@ -40,6 +44,10 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         //*****
         Playerhealth = gameObject.GetComponent<Health>().currentHealth;
+
+        Cwalk = false;
+        Crun = false;
+        Cjump = false;
     }
 
     // Update is called once per frame
@@ -78,16 +86,34 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerAnimator.SetBool("Walk", true);
             Debug.Log("Walk");
+
+            if(Cwalk == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Walk");
+                FindObjectOfType<AudioManager>().Stop("Run");
+                Cwalk = true;
+            }
         }
         else if (direction != Vector3.zero && Input.GetKey (KeyCode.LeftShift))
         {   
             
             PlayerAnimator.SetBool("Run", true);
+
+            if (Crun == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Run");
+                FindObjectOfType<AudioManager>().Stop("Walk");
+                Crun = true;
+            }
         }
         else if (direction == Vector3.zero)
         {
             PlayerAnimator.SetBool("Walk", false);
             PlayerAnimator.SetBool("Run", false);
+            Cwalk = false;
+            Crun = false;
+            FindObjectOfType<AudioManager>().Stop("Walk");
+            FindObjectOfType<AudioManager>().Stop("Run");
         }
 
         if (direction.magnitude >= 0.1f)
@@ -107,6 +133,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 Jump();
                 PlayerAnimator.SetTrigger("Jump");
+                FindObjectOfType<AudioManager>().Play("Jump");
+                
             }
         }
         else if (!isGrounded)
@@ -138,6 +166,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Enemy2")
         {
             StartCoroutine(PlayerFreeze());
+            
         }
     }
     IEnumerator PlayerFreeze()

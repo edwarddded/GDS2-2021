@@ -31,6 +31,7 @@ public class EnemyAI : MonoBehaviour
             KnockBack();
             Instantiate(MaterialOfEnemy, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
+            FindObjectOfType<AudioManager>().Play("Hurt");
         }
         // The damage that bullet casue
         if (other.gameObject.tag == "Bullet")
