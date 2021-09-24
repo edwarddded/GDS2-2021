@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 811144704}
-  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1977,6 +1977,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1731545034250319057, guid: 8073d9a1aef7de04bbfde72d91ee0a40,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2512251370265233982, guid: 8073d9a1aef7de04bbfde72d91ee0a40,
         type: 3}
       propertyPath: m_RootOrder
@@ -2281,6 +2286,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5025302215912153203, guid: b57b2a87ff45990429e0638194d29344,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7171416518376031783, guid: b57b2a87ff45990429e0638194d29344,
         type: 3}
       propertyPath: m_RootOrder
@@ -2378,7 +2388,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &1409655962
 MonoBehaviour:
@@ -2962,7 +2972,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   EffectFlags:
     components: []
-  sharedInstanceID: cfee599b-412e-4731-b79c-acf27191e7ed
+  sharedInstanceID: 03649d47-ada7-435a-944a-2a61361c34d7
 --- !u!1 &1687035392
 GameObject:
   m_ObjectHideFlags: 3
