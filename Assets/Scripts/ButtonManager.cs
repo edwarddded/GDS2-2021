@@ -13,6 +13,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (map != null)
         {
+
             bool isActive = map.activeSelf;
             map.SetActive(!isActive);
         }
@@ -21,6 +22,8 @@ public class ButtonManager : MonoBehaviour
     {
         if (build != null)
         {
+            transform.localPosition = new Vector2(0, -Screen.height);
+            transform.LeanMoveLocalX(-254, 0.5f).setEaseOutExpo().delay = 0.1f;
             bool isActive = build.activeSelf;
             build.SetActive(!isActive);
         }
