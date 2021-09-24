@@ -36,7 +36,7 @@ public class BackgroundControl : MonoBehaviour
                     this.GetComponent<Image>().color.g,
                     this.GetComponent<Image>().color.b,
 
-                    gameObject.GetComponent<Image>().color.a - tempTime / 30 * Time.deltaTime
+                    gameObject.GetComponent<Image>().color.a - tempTime / 15 * Time.deltaTime
                     );
         }
         Destroy(this.gameObject, 40.0f);

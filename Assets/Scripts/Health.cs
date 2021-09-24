@@ -83,7 +83,7 @@ public class Health : MonoBehaviour
     {
         PlayerAnimator.SetTrigger("Die");
         yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
     IEnumerator HurtFlash()
     {
