@@ -6,18 +6,27 @@ public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed;
     public Rigidbody rb;
+    
+    //Restricts inventory / building UI when player is trying to place a tower
+    //This boolean can also be used to restrict other player functions later
+    public bool isBuilding;
 
     Vector3 movement;
 
-    public bool isBuilding;
-    public GameObject[] TowerFrames;
+    //Character jump
+    public float jumpForce = 7;
+    public CapsuleCollider col;
+    public LayerMask groundLayers;
 
-    private Inventory inv;
+    public GameObject map;
 
+    //Player animation
+    private Animator PlayerAnimator;
     private void Start()
     {
-        inv = GetComponent<Inventory>();
         isBuilding = false;
+        col = GetComponent<CapsuleCollider>();
+        PlayerAnimator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -40,26 +49,44 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
 
-
-        /*******************
-         * Tower Building 
-         ********************/
-        if (Input.GetKeyDown("1"))
+        //Player Jump
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
-            // 10 is just an example cost of a tower, 
-            // going to implement a separate script to retrieve tower cost later
-            if (!isBuilding && (inv.GetScrap() >= 10))
-            {
-                isBuilding = true;
-                Instantiate(TowerFrames[0]);
-            }
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (map != null)
+            {
+                bool isActive = map.activeSelf;
+                map.SetActive(!isActive);
+            }
+        }
     }
-
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Enemy2")
+        {
+            StartCoroutine(PlayerFreeze());
+        }
+    }
+    IEnumerator PlayerFreeze()
+    {
+        movementSpeed = 0;
+        yield return new WaitForSeconds(0.75f);
+        movementSpeed = 10;
+    }
+    private bool IsGrounded()
+    {
+        return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, 
+            col.bounds.min.y, col.bounds.center.z), col.radius * .9f, groundLayers);
+    }
     private void FixedUpdate()
     {
         movement.Normalize();
         rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
+        PlayerAnimator.SetFloat("Run", Input.GetAxis("Horizontal"));
+        PlayerAnimator.SetFloat("Run", Input.GetAxis("Vertical"));
     }
 }
