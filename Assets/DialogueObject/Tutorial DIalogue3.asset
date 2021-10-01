@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a9726e340bb724ba2b129d942e4357, type: 3}
+  m_Name: Tutorial DIalogue3
+  m_EditorClassIdentifier: 
+  Dialogueinfo:
+  - Myname: robby
+    portrait: {fileID: 0}
+    Mytext: you can see there are some materials over there, try to collect them
+      by press the E button
+  - Myname: robby
+    portrait: {fileID: 0}
+    Mytext: you can check your material in your inventory by press I button
+  - Myname: robby
+    portrait: {fileID: 0}
+    Mytext: or click the button on the left side! you will find out what you need
