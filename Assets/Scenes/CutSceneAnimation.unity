@@ -2102,7 +2102,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Oh my god ! Where is here? ...It's strange here ! How can i back to home...?
+  m_Text: Oh my god ! ......What has happened? Oh! Where is there? How can i back
+    home!
 --- !u!222 &1213693719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2372,6 +2373,8 @@ PlayableDirector:
     value: {fileID: 607158418}
   - key: {fileID: -4593267427050705856, guid: a6078390f75c08e49a7ea7141d23a20b, type: 2}
     value: {fileID: 1623642077}
+  - key: {fileID: 1950435726890792402, guid: a6078390f75c08e49a7ea7141d23a20b, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1340863127
@@ -3501,7 +3504,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   EffectFlags:
     components: []
-  sharedInstanceID: 03649d47-ada7-435a-944a-2a61361c34d7
+  sharedInstanceID: 252e4202-2e3a-477a-8bf4-202fcf5325cf
 --- !u!1001 &1899586902
 PrefabInstance:
   m_ObjectHideFlags: 0
