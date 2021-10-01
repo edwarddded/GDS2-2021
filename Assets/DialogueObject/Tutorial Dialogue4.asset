@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a9726e340bb724ba2b129d942e4357, type: 3}
+  m_Name: Tutorial Dialogue4
+  m_EditorClassIdentifier: 
+  Dialogueinfo:
+  - Myname: robby
+    portrait: {fileID: 0}
+    Mytext: see! there are two enemy robot stay there. be careful, don't wake them
+      up, you can build tower to defence yourself by press the b button
+  - Myname: robby
+    portrait: {fileID: 0}
+    Mytext: Once you build tower, try to lure them to your attack range, don't forget
+      to check if you have enough materials!
+  - Myname: robby
+    portrait: {fileID: 0}
+    Mytext: Your health will be reduced when you are attacked by a robot
