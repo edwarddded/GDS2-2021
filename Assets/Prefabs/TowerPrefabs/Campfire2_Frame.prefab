@@ -108,4 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 11400000, guid: a4d48e91b49ac5349aea80356d371730, type: 2}
+  constructionEffect: {fileID: 2282163681174780551, guid: 68a0a2e7c3efdfc4c994de61d86e4226,
+    type: 3}
   heightOffset: 1

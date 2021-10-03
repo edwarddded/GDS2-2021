@@ -6,6 +6,8 @@ public class UnderConstruction : MonoBehaviour
 {
     public TowerInfo tower;
 
+    public GameObject constructionEffect;
+
     Inventory inventory;
 
     private bool isPlaced;
@@ -20,7 +22,6 @@ public class UnderConstruction : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         player.GetComponent<PlayerMovement>().isBuilding = true;
         isPlaced = false;
-
     }
 
     private void Update()
@@ -47,6 +48,9 @@ public class UnderConstruction : MonoBehaviour
                 isPlaced = true;
                 Collider c = GetComponent<Collider>();
                 c.enabled = true;
+                GameObject fx = Instantiate(constructionEffect, this.transform.position, this.transform.rotation);
+                fx.transform.parent = this.gameObject.transform;
+                Destroy(fx, tower.buildTime - 0.1f);
                 Invoke("SpawnBuilding", tower.buildTime);
             }
 
