@@ -128,6 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 11400000, guid: 9aadd5b3579bc304c8dfe661cc83ed5d, type: 2}
+  constructionEffect: {fileID: 2282163681174780551, guid: 68a0a2e7c3efdfc4c994de61d86e4226,
+    type: 3}
   heightOffset: 1
 --- !u!1 &7691790639558369315
 GameObject:

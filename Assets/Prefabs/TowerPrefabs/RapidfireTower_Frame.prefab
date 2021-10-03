@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 11400000, guid: 1467921abcebb954081b08b481dac2ca, type: 2}
+  constructionEffect: {fileID: 2282163681174780551, guid: 68a0a2e7c3efdfc4c994de61d86e4226,
+    type: 3}
   heightOffset: 1
 --- !u!1001 &8748182329775580886
 PrefabInstance:
@@ -25,6 +27,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mass
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5812896455769963186, guid: 619d2b6468c499a46bd986e3ed312c3a,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7023200880903004088, guid: 619d2b6468c499a46bd986e3ed312c3a,
         type: 3}
