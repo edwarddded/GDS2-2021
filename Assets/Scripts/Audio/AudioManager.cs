@@ -30,6 +30,8 @@ public class AudioManager : MonoBehaviour
             s.source.clip = s.clip;
             s.source.loop = s.loop;
         }
+
+        AudioListener.volume = PlayerPrefs.GetFloat("volume");
     }
 
     public void Play(string name)
