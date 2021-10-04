@@ -16,7 +16,7 @@ public class ToMainGame : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 30f)
+        if (timer >= 26f)
         {
             SceneManager.LoadScene(2);
         }
