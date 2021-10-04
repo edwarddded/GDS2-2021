@@ -46,6 +46,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         // This is to prevent the GameObject's health from going into a negative value when taking damage
+
         StartCoroutine(HurtFlash());
         if((currentHealth - damage) < 0)
         {
@@ -87,6 +88,7 @@ public class Health : MonoBehaviour
     }
     IEnumerator HurtFlash()
     {
+        PlayerAnimator.SetTrigger("IsHit");
         RedSplatterImage.enabled = true;
         RedEffect.enabled = true;
         yield return new WaitForSeconds(hurtTimer);

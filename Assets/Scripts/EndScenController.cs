@@ -9,7 +9,7 @@ public class EndScenController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.None;
     }
     public void MenuButton()
     {
