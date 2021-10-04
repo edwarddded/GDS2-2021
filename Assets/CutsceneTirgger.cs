@@ -28,7 +28,7 @@ public class CutsceneTirgger : MonoBehaviour
         Playercamera.SetActive(false);
         player.SetActive(false);
         Cutscene1.SetActive(true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(45f);
         MainCanvas.SetActive(true);
         Playercamera.SetActive(true);
         player.SetActive(true);
