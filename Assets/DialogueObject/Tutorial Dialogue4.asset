@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogueinfo:
   - Myname: robby
-    portrait: {fileID: 0}
+    portrait: {fileID: 21300000, guid: 369db8a4610be29408819fefd93a1ea8, type: 3}
     Mytext: see! there are two enemy robot stay there. be careful, don't wake them
       up, you can build tower to defence yourself by press the b button
   - Myname: robby
-    portrait: {fileID: 0}
+    portrait: {fileID: 21300000, guid: 369db8a4610be29408819fefd93a1ea8, type: 3}
     Mytext: Once you build tower, try to lure them to your attack range, don't forget
       to check if you have enough materials!
   - Myname: robby
-    portrait: {fileID: 0}
+    portrait: {fileID: 21300000, guid: 369db8a4610be29408819fefd93a1ea8, type: 3}
     Mytext: Your health will be reduced when you are attacked by a robot

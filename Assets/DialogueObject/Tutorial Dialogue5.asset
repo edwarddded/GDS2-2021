@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogueinfo:
   - Myname: robby
-    portrait: {fileID: 0}
+    portrait: {fileID: 21300000, guid: 369db8a4610be29408819fefd93a1ea8, type: 3}
     Mytext: don't waste your tower! you can remove it by press the R button! then
       you can get some materials back
   - Myname: robby
-    portrait: {fileID: 0}
-    Mytext: remember you find the map from the basement? check map by press M button
-      or click the button on the left side! you will see it
+    portrait: {fileID: 21300000, guid: 369db8a4610be29408819fefd93a1ea8, type: 3}
+    Mytext: 'remember you find the map from the basement? check map by press M button '

@@ -14,12 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogueinfo:
   - Myname: robby
-    portrait: {fileID: 0}
+    portrait: {fileID: 21300000, guid: 369db8a4610be29408819fefd93a1ea8, type: 3}
     Mytext: you can see there are some materials over there, try to collect them
       by press the E button
   - Myname: robby
-    portrait: {fileID: 0}
+    portrait: {fileID: 21300000, guid: 369db8a4610be29408819fefd93a1ea8, type: 3}
     Mytext: you can check your material in your inventory by press I button
-  - Myname: robby
-    portrait: {fileID: 0}
-    Mytext: or click the button on the left side! you will find out what you need
