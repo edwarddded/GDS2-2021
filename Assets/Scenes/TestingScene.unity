@@ -477,7 +477,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Crete\uFF1FCrete is the name of this island\uFF01The name of this place\uFF01You
     want to back to home\uFF1FHa\uFF0Cthere is a way you can go to anyway you want.
-    To collect all the three Space Cube around this island, it will make a protal
+    To collect all the three Space Cube around this island, it will make a portal
     for you, you can get to any place with that."
 --- !u!222 &68370305
 CanvasRenderer:
@@ -5430,7 +5430,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Human, you want the space cube\uFF1FI know, I know, you want to build
-    the protal\uFF01\nYes, yeah, there is one here. BUT, Why i give it to you\uFF1F\uFF01\nYou,
+    the portal\uFF01\nYes, yeah, there is one here. BUT, Why i give it to you\uFF1F\uFF01\nYou,
     the HUMAN\uFF01Always like this, when face something, only know run away\uFF01"
 --- !u!222 &575473015
 CanvasRenderer:
@@ -16055,7 +16055,7 @@ MonoBehaviour:
   m_Text: 'But after time...I know human leave this island is the best choice.
 
     So,
-    little boy, going up and to get the last space cube and make the protal. It''s
+    little boy, going up and to get the last space cube and make the portal. It''s
     time to home. But there are some robots which are out of control there. I can''t
     help you. Be careful.'
 --- !u!222 &1704874685
