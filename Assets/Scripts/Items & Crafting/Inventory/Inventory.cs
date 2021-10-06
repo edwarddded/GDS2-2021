@@ -80,4 +80,25 @@ public class Inventory : MonoBehaviour
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
     }
+
+    public bool hasResource(Item item, int amount)
+    {
+        foreach (Item i in items)
+        {
+            if (i.name == item.name && i.amount >= amount)
+            {
+                Debug.Log("You have enough " + item.name + " to build this!");
+                return true;
+            }
+
+        }
+
+        Debug.Log("You don't have enough " + item.name + " to build this.");
+        return false;
+    }
+
+    public bool doNothing()
+    {
+        return true;
+    }
 }

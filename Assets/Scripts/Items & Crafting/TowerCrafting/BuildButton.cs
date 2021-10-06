@@ -30,7 +30,7 @@ public class BuildButton : MonoBehaviour
         {
             for (int i = 0; i < tower.itemsRequired.Length; i++)
             {
-                if (!hasResource(tower.itemsRequired[i], tower.itemAmount[i]))
+                if (!inventory.hasResource(tower.itemsRequired[i], tower.itemAmount[i]))
                 {
                     Debug.Log("Insufficient resources to build this!");
                     return;
@@ -42,6 +42,7 @@ public class BuildButton : MonoBehaviour
 
     }
 
+    /*
     private bool hasResource(Item item, int amount)
     {
         foreach(Item i in inventory.items)
@@ -57,13 +58,14 @@ public class BuildButton : MonoBehaviour
         Debug.Log("You don't have enough " + item.name + " to build this.");
         return false;
     }
+    */
 
     public void ShowTooltip()
     {
         if(tower!= null)
         {
-            tooltip.GetComponent<BuildTooltip>().UpdateTooltip(tower);
             tooltip.SetActive(true);
+            tooltip.GetComponent<BuildTooltip>().UpdateTooltip(tower);
         }
     }
 
@@ -74,4 +76,5 @@ public class BuildButton : MonoBehaviour
             tooltip.SetActive(false);
         }
     }
+
 }
