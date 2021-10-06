@@ -10,6 +10,7 @@ public class EndScenController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        FindObjectOfType<AudioManager>().Play("Death");
     }
     public void MenuButton()
     {
