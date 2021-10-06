@@ -13,7 +13,7 @@ public class UnderConstruction : MonoBehaviour
     private bool isPlaced;
     private GameObject player;
     private Transform p;
-    public float heightOffset;
+    public float heightOffset = 3;
     private float posX, posY, posZ;
 
     private void Start()
@@ -57,10 +57,10 @@ public class UnderConstruction : MonoBehaviour
             // Sets the building frame to be in front of the player
             p = GameObject.FindWithTag("Player").GetComponent<Transform>();
             posX = p.transform.position.x;
-            posY = p.transform.position.y+5;
+            posY = p.transform.position.y;
             posZ = p.transform.position.z;
             transform.rotation = p.transform.rotation;
-            transform.position = new Vector3(posX, posY + heightOffset, posZ) + p.transform.forward*4;
+            transform.position = new Vector3(posX, posY+heightOffset, posZ) + p.transform.forward*4;
         }
     }
 
