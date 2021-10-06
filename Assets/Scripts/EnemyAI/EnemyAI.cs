@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    //Enemy Movement
+
+    
     private Transform player;
-    private float dist;
-    public float moveSpeed;
-    public float howClose;
+    public float movespeed = 6f;
+    private Rigidbody rb;
+    private Vector3 movement;
+    public float howclose;
+
     public float EnemyHealth;
     public GameObject MaterialOfEnemy;
     //Enemy Explosion
@@ -19,8 +23,10 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").gameObject.transform;
+        rb = this.GetComponent<Rigidbody>();
         Ani = gameObject.GetComponent<Animator>();
+        
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -51,22 +57,10 @@ public class EnemyAI : MonoBehaviour
         {
             float Causedamage = other.gameObject.GetComponent<MegaBall>().damage;
             EnemyHealth -= Causedamage;
-            if (moveSpeed >=2)
-            {
-                StartCoroutine(slowdown());
-            } 
         }
     }
 
-    IEnumerator slowdown()
-    {
-        moveSpeed = moveSpeed / 2;
-        Debug.Log(moveSpeed);
-        yield return new WaitForSeconds(4);
-        moveSpeed = moveSpeed * 2;
-        Debug.Log(moveSpeed);
-    }
-    //Explosion knockBlack
+  
     void KnockBack()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
@@ -81,17 +75,37 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    void moveCharacter(Vector3 direction)
+    {
+        rb.MovePosition((Vector3)transform.position + (direction * movespeed * Time.deltaTime));
+
+    }
+    private void FixedUpdate()
+    {
+        float distance = Vector3.Distance(player.position, this.transform.position);
+        if (distance<= howclose)
+        {
+            Ani.SetBool("Run", true);
+            moveCharacter(movement);
+        }
+        else
+        {
+            Ani.SetBool("Run", false);
+        }
+       
+    }
     void Update()
     {
-        dist = Vector3.Distance(player.position, transform.position);
-
-        if (dist <= howClose)
+        //FollowPlayer();
+        float distance = Vector3.Distance(player.position, this.transform.position);
+        if (distance <= howclose)
         {
-            transform.LookAt(player);
-            Ani.SetBool("Run", true);
-            GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed);
+            Vector3 direction = player.position - transform.position;
+            gameObject.transform.forward = direction;
+            direction.Normalize();
+            movement = direction;
         }
+
         if (EnemyHealth <=0)
         {
             GameObject _exp = Instantiate(exp, transform.position, transform.rotation);

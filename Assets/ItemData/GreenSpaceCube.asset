@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GreenSpaceCube
   m_EditorClassIdentifier: 
   name: GreenSpaceCube
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 45dc82a700514814b9c0986d7805c138, type: 3}
   amount: 1
   maxStack: 1
-  desc: SpaceCube! one of material to make portal
+  desc: SpaceCube! The one of materials to make portal

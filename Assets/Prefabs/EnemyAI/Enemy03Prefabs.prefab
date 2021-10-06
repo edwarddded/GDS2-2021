@@ -570,9 +570,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2512251370265233982}
   - component: {fileID: 8375960399523614788}
-  - component: {fileID: 3648703125660570093}
   - component: {fileID: 1731545034250319057}
   - component: {fileID: 8355208230112107124}
+  - component: {fileID: 5863048292815079997}
   m_Layer: 0
   m_Name: Enemy03Prefabs
   m_TagString: Enemy
@@ -615,19 +615,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &3648703125660570093
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2996758399730159748}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.111666106, y: 0.1467989, z: 0.0989899}
-  m_Center: {x: -0.001576233, y: 0.06968989, z: -0.0038650602}
 --- !u!54 &1731545034250319057
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -642,7 +629,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &8355208230112107124
 MonoBehaviour:
@@ -656,14 +643,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3396606f2f727124daa236511a0aaa9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  howClose: 40
+  player: {fileID: 2395598215703563379, guid: c9ec5d0e590b5524782f5251293c30f4, type: 3}
+  movespeed: 7
+  howclose: 30
   EnemyHealth: 5
   MaterialOfEnemy: {fileID: 545919315381353877, guid: 21023e80b85568b4b8dde43dace013a7,
     type: 3}
   exp: {fileID: 4472293459428272497, guid: df85828235f414d47a8fdf55e32c6187, type: 3}
   expForce: 200
   radius: 10
+--- !u!65 &5863048292815079997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996758399730159748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.100803375, y: 0.13623782, z: 0.08733445}
+  m_Center: {x: -0.00074691774, y: 0.070914745, z: -0.0014995545}
 --- !u!1 &3712772730203136631
 GameObject:
   m_ObjectHideFlags: 0

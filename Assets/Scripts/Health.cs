@@ -83,6 +83,8 @@ public class Health : MonoBehaviour
     IEnumerator PlayerDie()
     {
         PlayerAnimator.SetTrigger("Die");
+        PlayerMovement movement = GetComponent<PlayerMovement>();
+        movement.enabled = false;
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(5);
     }

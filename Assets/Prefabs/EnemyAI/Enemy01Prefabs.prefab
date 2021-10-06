@@ -504,7 +504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5646670035393045749}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.1499996, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 5606197734867747299}
@@ -537,7 +537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5844959358979524882}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2087122062439255693}
@@ -556,8 +556,8 @@ GameObject:
   - component: {fileID: 6284783402425904175}
   - component: {fileID: 132897834262345301}
   - component: {fileID: 2856995143907500551}
-  - component: {fileID: 2098037225172760411}
   - component: {fileID: 7770697735837470767}
+  - component: {fileID: 4936051855813260215}
   m_Layer: 0
   m_Name: Enemy01Prefabs
   m_TagString: Enemy
@@ -614,21 +614,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &2098037225172760411
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6661907522102605461}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5498238, y: 1.868864, z: 1}
-  m_Center: {x: 0.06476402, y: 0.8716793, z: 0}
 --- !u!114 &7770697735837470767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,14 +628,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3396606f2f727124daa236511a0aaa9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  howClose: 40
+  movespeed: 8
+  howclose: 35
   EnemyHealth: 3
   MaterialOfEnemy: {fileID: 2972258869829250989, guid: 94a36c76f8aeeae4eb4c114336e2d3d0,
     type: 3}
   exp: {fileID: 4472293459428272497, guid: df85828235f414d47a8fdf55e32c6187, type: 3}
   expForce: 200
   radius: 10
+--- !u!65 &4936051855813260215
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6661907522102605461}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.269455, y: 1.6287284, z: 1.0641556}
+  m_Center: {x: -0.0705719, y: -0.3143642, z: -0.03207779}
 --- !u!1 &7501528476154430517
 GameObject:
   m_ObjectHideFlags: 0

@@ -77,4 +77,17 @@ public class DialogueManager : MonoBehaviour
     {
         DialogueBox.SetActive(false);
     }
+    private void Update()
+    {
+        //if (DialogueBox.activeInHierarchy)
+        //{
+        //    PlayerMovement movement = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerMovement>();
+        //    movement.enabled = false;
+        //}
+        //else
+        //{
+        //    PlayerMovement movement = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerMovement>();
+        //    movement.enabled = true;
+        //}
+    }
 }

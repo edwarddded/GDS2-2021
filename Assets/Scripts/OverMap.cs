@@ -6,17 +6,16 @@ using UnityEngine.SceneManagement;
 public class OverMap : MonoBehaviour
 {
     // Start is called before the first frame update
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag =="Player")
+        if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(5);
             Debug.Log("You dead");
         }
         else
         {
             Destroy(other.gameObject);
         }
-        
     }
 }
