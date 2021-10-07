@@ -446,9 +446,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Crete\uFF1FCrete is the name of this island\uFF01The name of this place\uFF01You
-    want to back to home\uFF1FHa\uFF0Cthere is a way you can go to anyway you want.
-    To collect all the three Space Cube around this island, it will make a portal
-    for you, you can get to any place with that."
+    want to back to home\uFF1FHa\uFF0Cthere is a way you can go to anywhere you want. 
+    collect all the three Space Cubes around this island, then build a portal with
+    it, you can get to any place with that."
 --- !u!222 &68370305
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5103,9 +5103,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Human, you want the space cube\uFF1FI know, I know, you want to build
-    the portal\uFF01\nYes, yeah, there is one here. BUT, Why i give it to you\uFF1F\uFF01\nYou,
-    the HUMAN\uFF01Always like this, when face something, only know run away\uFF01"
+  m_Text: "Human, you want the space cube\uFF1F...I know, I know, you want to build
+    the portal\uFF01\nYes, yeah, there is one here. BUT, Why should I give it to
+    you\uFF1F\uFF01\nYou, the HUMAN\uFF01Always like this, when faced with a problem,
+    you only know how to run away\uFF01"
 --- !u!222 &575473015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5434,8 +5435,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ah, yeah, I was suddenly coming here and know nothing, I am afraid and
-    want to back home.
+  m_Text: yeah, I was suddenly came here and know nothing, I am afraid and want to
+    back home.
 --- !u!222 &632416668
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5878,9 +5879,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Wait..I am the only one human on this island\uFF1FI don't know what was
-    happened and why I come to this place...What's Crete mean? Why these Robot out
-    of control\uFF1F...These are not important...Do you know how can I back home?"
+  m_Text: "Wait..I am the only human on this island\uFF1FI don't know what happened
+    and why I've come to this place...What does Crete mean? Why are these Robot out
+    of control\uFF1F...wait, most importantly...Do you know how can I go back home?"
 --- !u!222 &714628738
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6251,7 +6252,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Back\uFF1F\uFF01I want to back home\uFF01I want to back to my store room\uFF01"
+  m_Text: "Back\uFF1F\uFF01I want to go back home\uFF01I was  in my store room just
+    now\uFF01"
 --- !u!222 &771166525
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6990,10 +6992,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Long long time ago, on the Crete, human built a highly mechanized city,
-    and in-deepth study about the robots. But one time, the newly manufactured robot
-    out of control. All the human on this island run away quickly and give up us,
-    we can only wait and wait. '
+  m_Text: 'Long long ago, on the Crete, human built a highly mechanized city, and
+    in-deepth study about the robots. But one day, the newly manufactured robots
+    went out of control. All the human on this island ran away quickly and gave up
+    on us, we can only wait and wait. '
 --- !u!222 &828275333
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7340,9 +7342,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: I really want to leave here, I want to find the way home. Roby told me
-    need to find three space cube and i can get back to home...Do you know where
-    is the other two cubes?
+  m_Text: What? I didn't ask to be here! I want to find my way back home. That robot
+    told me to find three space cubes and I can get back to home...Do you know where
+    the other two cubes are?
 --- !u!222 &851099680
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9994,8 +9996,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "HUMAN\uFF01Why You Back Here\uFF01\nCrete is not a place for human\uFF01\nThe
-    Crete is only for ROBOTS to live\uFF01Only for us to live! Get away\uFF01"
+  m_Text: "HUMAN\uFF01 Why Are You Here\uFF01?\nCrete is not a place for humans\uFF01\nThe
+    Crete is only for ROBOTS to live\uFF01Only for us to live! Get away\uFF01Get
+    Out !"
 --- !u!222 &1176597093
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10781,8 +10784,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "I can tell you\uFF01The first Space Cube! The Orange one is in the temple\uFF01You
-    can get it easy from me! "
+  m_Text: "I can tell you\uFF01The first Space Cubes' location! The Orange one is
+    in the temple\uFF01You can get it easy from me! "
 --- !u!222 &1225206929
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12130,9 +12133,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "OH MY GOD\uFF01There is a human in front of me\uFF01How long from last
-    time I saw a human\uFF1FAll the human escaped the Crete after most of the Robot
-    out of control. Why you come back?"
+  m_Text: "OH MY GOD\uFF01There is a human in front of me\uFF01How long since the
+    last time I saw a human\uFF1FAll the humans escaped the Crete after most of the
+    Robots went out of control. Why did you come back?"
 --- !u!222 &1461898688
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12883,8 +12886,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "The next cube is over the place of Robot, it is not as friendly as me!
-    \nHe is over there, go across the river, you will see it."
+  m_Text: "The next cube is with another Robot, it is not as friendly as me! \nHe
+    is over there, go across the river, you will see it."
 --- !u!222 &1529108462
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13341,7 +13344,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "The Cube is there.\nBUT, if you want to get it, you need to kill all the
-    robots which are out of control there. \nHahahaha, try to survival, little boy."
+    robots which are out of control there. \nHahahaha, try to survive, little boy."
 --- !u!222 &1567009990
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13465,7 +13468,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '..........
 
-    You can find......under temple
+    .....under... temple
 
 '
 --- !u!222 &1585495290
@@ -13589,10 +13592,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Hi, little boy. I know you come, Ruby told me there is a human on Crete
-    these days.
+  m_Text: 'Hi, little boy. I knew you would come, Ruby told me there is a human on
+    Crete these days.
 
-    I know you have problems about this island and us.'
+    I know you have issues with this island and us.'
 --- !u!222 &1590281069
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14770,12 +14773,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'But after time...I know human leave this island is the best choice.
+  m_Text: 'But after time...I realised humans leaveing this island was the best choice.
 
     So,
-    little boy, going up and to get the last space cube then you can build the portal
-    on your build menuy. It''s time to go home. But there are some robots which are
-    out of control there. Be careful.'
+    little boy, go up and to get the last space cube, then you can build the portal.
+    It''s time to go home. But there are some robots which are out of control there.
+    Be careful.'
 --- !u!222 &1704874685
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16301,10 +16304,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'What under temple?
+  m_Text: '...under temple?
 
-    Oh my god, the only way now I have is go to see
-    what under the temple.'
+    Is something there? Do I have to go under the temple?!'
 --- !u!222 &1836730754
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16846,7 +16848,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'It is .... welcome...back...
+  m_Text: '.... welcome...back...
 
 '
 --- !u!222 &1893820218
@@ -18433,9 +18435,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'I am....I... am...
+  m_Text: 'Human...? I am....I... am...
 
-    ....will work...for you'
+    .... I...will work...for you'
 --- !u!222 &2037603638
 CanvasRenderer:
   m_ObjectHideFlags: 0
