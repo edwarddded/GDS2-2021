@@ -218,11 +218,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3396606f2f727124daa236511a0aaa9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2395598215703563379, guid: c9ec5d0e590b5524782f5251293c30f4, type: 3}
   movespeed: 7
   howclose: 35
   EnemyHealth: 5
-  MaterialOfEnemy: {fileID: 2972258869829250989, guid: 94a36c76f8aeeae4eb4c114336e2d3d0,
+  MaterialOfEnemy: {fileID: 545919315381353877, guid: 21023e80b85568b4b8dde43dace013a7,
     type: 3}
   exp: {fileID: 4472293459428272497, guid: df85828235f414d47a8fdf55e32c6187, type: 3}
   expForce: 200

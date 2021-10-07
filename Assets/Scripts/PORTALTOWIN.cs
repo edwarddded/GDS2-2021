@@ -7,15 +7,14 @@ public class PORTALTOWIN : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.gameObject.tag == "Player")
-        //{
-        //    GameObject audiomangaer = GameObject.Find("AudioManager").gameObject;
-        //    if (audiomangaer != null)
-        //    {
-        //        Destroy(audiomangaer);
-        //        SceneManager.LoadScene();
-        //    }
+        if (other.gameObject.tag == "Player")
+        {
+            
+           
 
-        //}
+                SceneManager.LoadScene(6);
+
+
+        }
     }
 }

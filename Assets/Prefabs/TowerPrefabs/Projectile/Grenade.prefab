@@ -128,7 +128,7 @@ MonoBehaviour:
   radius: 10
   expForce: 200
   exp: {fileID: 4472293459428272497, guid: 6b746b7fbdb3db545a5cf631afbc0be9, type: 3}
-  damage: 2
+  damage: 3
 --- !u!1 &7422699801576990187
 GameObject:
   m_ObjectHideFlags: 0
