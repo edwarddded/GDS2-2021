@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
 
     public int currentHealth;
     public int maxHealth = 20;
+    Color alphaColor;
+    public Image lowHealthImage;
 
     public Healthbar healthbar;
 
@@ -28,6 +30,7 @@ public class Health : MonoBehaviour
         RedSplatterImage.enabled = false;
         RedEffect.enabled = false;
         PlayerAnimator = GetComponentInChildren<Animator>();
+        alphaColor = lowHealthImage.color;
     }
 
     private void Update()
@@ -58,6 +61,7 @@ public class Health : MonoBehaviour
         }
 
         UpdateHealthBar();
+        lowHealth();
     }
 
     public void Heal(int healAmount)
@@ -73,6 +77,7 @@ public class Health : MonoBehaviour
         }
 
         UpdateHealthBar();
+        lowHealth();
     }
 
     void Die()
@@ -104,4 +109,20 @@ public class Health : MonoBehaviour
         if (healthbar != null)
             healthbar.setHealth(currentHealth);    
     }
+    private void lowHealth()
+    {
+        if (currentHealth <= 15)
+        {
+            alphaColor.a += 0.1f;
+            lowHealthImage.color = alphaColor;
+            Debug.Log("health is low");
+        }
+        else
+        {
+            alphaColor.a -= 0.1f;
+            lowHealthImage.color = alphaColor;
+
+        }
+    }
+
 }
