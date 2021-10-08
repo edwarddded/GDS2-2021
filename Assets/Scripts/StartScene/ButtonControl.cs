@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class ButtonControl : MonoBehaviour
 {
     // Start is called before the first frame update
+    private void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("MainMenu");
+    }
     public void StartGame()
     {
         SceneManager.LoadScene(1);
