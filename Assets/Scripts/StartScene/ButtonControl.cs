@@ -29,12 +29,5 @@ public class ButtonControl : MonoBehaviour
         Debug.Log("Exit Game");
     }
 
-    public void TutorialButton()
-    {
-        SceneManager.LoadScene(3);
-    }
-    public void SkiptoGame()
-    {
-        SceneManager.LoadScene(4);
-    }
+   
 }

@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 public class InstructionButton : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void ContinueGame()
+    public void TutorialButton()
     {
         SceneManager.LoadScene(3);
+    }
+    public void SkiptoGame()
+    {
+        SceneManager.LoadScene(4);
     }
 }

@@ -27,9 +27,5 @@ public class EndScenController : MonoBehaviour
         Application.Quit();
         Debug.Log("Exit Game");
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
