@@ -28,7 +28,10 @@ public class TowerRefund : MonoBehaviour
             outline.enabled = false;
 
         if (isSelected && Input.GetKeyDown("r") && !hasRefunded)
+        {
             Refund();
+            FindObjectOfType<AudioManager>().Play("Refund");
+        }
     }
 
     void Refund()

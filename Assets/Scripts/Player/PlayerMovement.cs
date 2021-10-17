@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
                 bool isActive = map.activeSelf;
                 map.SetActive(!isActive);
             }
+            FindObjectOfType<AudioManager>().Play("Click");
         }
     }
 

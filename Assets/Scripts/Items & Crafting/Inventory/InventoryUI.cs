@@ -48,6 +48,7 @@ public class InventoryUI : MonoBehaviour
                     buildUI.SetActive(false);
                     tooltip.SetActive(false);
                 }
+                FindObjectOfType<AudioManager>().Play("Click");
 
             }
             if (Input.GetButtonDown("Build"))
@@ -58,6 +59,7 @@ public class InventoryUI : MonoBehaviour
                     inventoryUI.SetActive(false);
                     tooltip.SetActive(false);
                 }
+                FindObjectOfType<AudioManager>().Play("Click");
 
             }
         }
