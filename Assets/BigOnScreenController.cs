@@ -7,12 +7,12 @@ public class BigOnScreenController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMesh1;
     [SerializeField] private TextMeshProUGUI textMesh2;
-    
+    [SerializeField] private GameObject NightApproaches, NightNeedtoDo;
     // Start is called before the first frame update
     void Start()
     {
-        //textMesh1.canvasRenderer.SetAlpha(0f);
-        //textMesh2.canvasRenderer.SetAlpha(0f);
+        textMesh1.canvasRenderer.SetAlpha(0);
+        textMesh2.canvasRenderer.SetAlpha(0);
     }
 
     // Update is called once per frame
@@ -40,37 +40,44 @@ public class BigOnScreenController : MonoBehaviour
     IEnumerator Day1()
     {
         float dayCount = GameObject.Find("DayNightCycle").gameObject.GetComponent<DayNightCycle>().days;
-
-        textMesh1.CrossFadeAlpha(1, 3, false);
-        textMesh2.CrossFadeAlpha(1, 2, false);
+        //NightApproaches.SetActive(true); NightNeedtoDo.SetActive(true);
+        //yield return new WaitForSeconds(1f);
         textMesh1.text = "NIGHT " + dayCount.ToString() + "  APPROACHES";
         textMesh2.text = "DEFEND YOURSELF!";
+        textMesh1.CrossFadeAlpha(1, 3, false);
+        textMesh2.CrossFadeAlpha(1, 2, false);     
         yield return new WaitForSeconds(5f);
         textMesh1.CrossFadeAlpha(0, 1, false);
         textMesh2.CrossFadeAlpha(0, 1, false);
+        NightApproaches.SetActive(false); NightNeedtoDo.SetActive(false);
+
     }
     IEnumerator Day2()
     {
         float dayCount = GameObject.Find("DayNightCycle").gameObject.GetComponent<DayNightCycle>().days;
-
+        NightApproaches.SetActive(true); NightNeedtoDo.SetActive(true);
         textMesh1.CrossFadeAlpha(1, 3, false);
         textMesh2.CrossFadeAlpha(1, 2, false);
         textMesh1.text = "NIGHT " + dayCount.ToString() + "  APPROACHES";
         textMesh2.text = "A HUGE WAVE OF ROBOTS IS APPROACHING!";
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         textMesh1.CrossFadeAlpha(0, 1, false);
         textMesh2.CrossFadeAlpha(0, 1, false);
+        NightApproaches.SetActive(false); NightNeedtoDo.SetActive(false);
+
     }
     IEnumerator Day3()
     {
         float dayCount = GameObject.Find("DayNightCycle").gameObject.GetComponent<DayNightCycle>().days;
-
+        NightApproaches.SetActive(true); NightNeedtoDo.SetActive(true);
         textMesh1.CrossFadeAlpha(1, 3, false);
         textMesh2.CrossFadeAlpha(1, 2, false);
         textMesh1.text = "NIGHT " + dayCount.ToString() + "  APPROACHES";
         textMesh2.text = "THE ROBOT'S NUMBERS ARE GROWING!";
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         textMesh1.CrossFadeAlpha(0, 1, false);
         textMesh2.CrossFadeAlpha(0, 1, false);
+        NightApproaches.SetActive(false); NightNeedtoDo.SetActive(false);
+
     }
 }
