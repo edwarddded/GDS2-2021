@@ -17,7 +17,7 @@ public class Grenade : MonoBehaviour
         RG.AddForce(transform.forward * speed);      
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
@@ -31,6 +31,10 @@ public class Grenade : MonoBehaviour
             Destroy(gameObject, 5);
         }
     }
+    //private void OnCollisionEnter(Collision other)
+    //{
+        
+    //}
     void KnockBack()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);

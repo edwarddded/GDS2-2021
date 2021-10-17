@@ -40,6 +40,7 @@ public class DayNightCycle : MonoBehaviour
     public Text texts;
 
     public bool check;
+   
     public void Start()
     {
         timeRate = 1.0f / FullDayLength;
@@ -49,6 +50,7 @@ public class DayNightCycle : MonoBehaviour
         days = 1;
 
         check = false;
+        
     }
 
     private void Update()
@@ -74,9 +76,7 @@ public class DayNightCycle : MonoBehaviour
             }
 
         }
-
-        //Increment time
-        time += timeRate * Time.deltaTime;
+        incrementTime();
 
         if (IsMorning == true)
         {
@@ -156,5 +156,20 @@ public class DayNightCycle : MonoBehaviour
         //Light and reflections intensity
         RenderSettings.ambientIntensity = LightingIntensityMultiplier.Evaluate(time);
         RenderSettings.reflectionIntensity = ReflectionsIntensityMultipler.Evaluate(time);
+    }
+    private void incrementTime()
+    {
+
+        //Increment time
+        bool IsPlaying = gameObject.GetComponent<CutsceneDayNightController>().IsCutscenePlaying;
+        if (IsPlaying)
+        {
+            time += 0;
+        }
+        else
+        {
+            time += timeRate * Time.deltaTime;
+        }
+
     }
 }

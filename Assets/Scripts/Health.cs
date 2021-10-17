@@ -39,7 +39,8 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
             Die();
     }
-    public void OnCollisionEnter(Collision other)
+    
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
@@ -90,7 +91,7 @@ public class Health : MonoBehaviour
         PlayerAnimator.SetTrigger("Die");
         PlayerMovement movement = GetComponent<PlayerMovement>();
         movement.enabled = false;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(5);
     }
     IEnumerator HurtFlash()

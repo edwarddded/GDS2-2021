@@ -47,9 +47,12 @@ MonoBehaviour:
   Enemy2: {fileID: 922623616582476345, guid: e0af7c9208e8a81468b2e359922a4bda, type: 3}
   Enemy3: {fileID: 2996758399730159748, guid: 8073d9a1aef7de04bbfde72d91ee0a40, type: 3}
   Enemy4: {fileID: 7552024200410324125, guid: b57b2a87ff45990429e0638194d29344, type: 3}
+  SpawnEffects: {fileID: 4472293459428272497, guid: df85828235f414d47a8fdf55e32c6187,
+    type: 3}
   xPosMin: 0
   xPosMax: 0
   zPosMin: 0
   zPosMax: 0
   enemyCount: 0
+  numberofEnemyInWave: 3
   isSpawnEnemy: 0

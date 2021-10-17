@@ -5,8 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-
-    
     private Transform player;
     public float movespeed = 6f;
     private Rigidbody rb;

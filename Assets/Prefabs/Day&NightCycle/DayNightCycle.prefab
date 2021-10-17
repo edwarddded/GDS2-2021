@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7392367167380732589}
   - component: {fileID: 7392367167380732594}
+  - component: {fileID: 1184260012}
   m_Layer: 0
   m_Name: DayNightCycle
   m_TagString: Untagged
@@ -44,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
-  FullDayLength: 15
+  FullDayLength: 180
   StartTime: 0.4
   noon: {x: 90, y: 0, z: 0}
   Sun: {fileID: 0}
@@ -113,33 +114,33 @@ MonoBehaviour:
   moon: {fileID: 0}
   moonColor:
     serializedVersion: 2
-    key0: {r: 0, g: 0.23754337, b: 0.990566, a: 1}
-    key1: {r: 0, g: 0.12585497, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0.5647059, g: 0.7490196, b: 0.94509804, a: 1}
+    key1: {r: 0.5647059, g: 0.7490196, b: 0.94509804, a: 1}
+    key2: {r: 0.5647059, g: 0.7490196, b: 0.94509804, a: 1}
+    key3: {r: 1, g: 1, b: 1, a: 0}
+    key4: {r: 1, g: 1, b: 1, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
+    ctime0: 193
+    ctime1: 31418
+    ctime2: 65535
+    ctime3: 65535
+    ctime4: 65535
     ctime5: 0
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 65535
-    atime2: 0
+    atime1: 31226
+    atime2: 65535
     atime3: 0
     atime4: 0
     atime5: 0
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 3
   moonIntensity:
     serializedVersion: 2
     m_Curve:
@@ -153,17 +154,17 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.52845365
     - serializedVersion: 3
-      time: 0.30044314
-      value: 0.0025759079
-      inSlope: -0.05005461
-      outSlope: -0.05005461
+      time: 0.07582224
+      value: 0.38794595
+      inSlope: -0.77548414
+      outSlope: -0.77548414
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.4190011
+      outWeight: 0.1336099
     - serializedVersion: 3
-      time: 0.49646693
-      value: 0.00033313036
+      time: 0.4979928
+      value: 0.30090076
       inSlope: -0.005158093
       outSlope: -0.005158093
       tangentMode: 0
@@ -171,17 +172,17 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.12826172
     - serializedVersion: 3
-      time: 0.70652777
-      value: -0.00092452765
-      inSlope: 0.041632216
-      outSlope: 0.041632216
+      time: 0.9157563
+      value: 0.35314423
+      inSlope: 0.47739196
+      outSlope: 0.47739196
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.2637822
+      outWeight: 0.5666639
     - serializedVersion: 3
-      time: 1
-      value: 0.5047188
+      time: 0.99383545
+      value: 0.49790955
       inSlope: 3.2808278
       outSlope: 3.2808278
       tangentMode: 0
@@ -275,3 +276,31 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  IsNight: 0
+  IsMorning: 0
+  dayTimeLoading: {fileID: 0}
+  nightTimeLoading: {fileID: 0}
+  daySlider: {fileID: 0}
+  nightSlider: {fileID: 0}
+  dayTime: 0
+  nightTime: 0
+  days: 0
+  texts: {fileID: 0}
+  check: 0
+--- !u!114 &1184260012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7392367167380732595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ecef276cc24f742b1a69a14f1ccfc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsCutscenePlaying: 0
+  Cutscene1: {fileID: 0}
+  Cutscene2: {fileID: 0}
+  Cutscene3: {fileID: 0}
+  Cutscene4: {fileID: 0}

@@ -17,10 +17,15 @@ public class TowerAI : MonoBehaviour
 
     public TurretShoot_Base shotScript;
 
+    public int currentHealth;
+    public int MaxHelath = 5;
+    public GameObject exp;
+
     private void Start()
     {
         InvokeRepeating("CheckForTarget", 0, 0.5f);
         shotScript = GetComponent<TurretShoot_Base>();
+        currentHealth = MaxHelath;
     }
 
     private void Update()
@@ -38,6 +43,12 @@ public class TowerAI : MonoBehaviour
                 timer = 0;
                 Shoot();
             }
+        }
+        if (currentHealth<=0)
+        {
+            GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
+            Destroy(_exp, 3);
+            Destroy(gameObject);
         }
     }
     private void CheckForTarget()
@@ -68,6 +79,24 @@ public class TowerAI : MonoBehaviour
     private void Shoot()
     {
         shotScript.Shoot(currentTarget);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            TakeDamage(1);
+        }
+    }
+    public void TakeDamage(int damage)
+    {
+        if ((currentHealth - damage) <0)
+        {
+            currentHealth = 0;
+        }
+        else
+        {
+            currentHealth -= damage;
+        }
     }
     private void OnDrawGizmos()
     {

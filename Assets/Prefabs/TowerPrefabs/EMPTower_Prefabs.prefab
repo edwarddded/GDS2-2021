@@ -241,10 +241,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TurretHead: {fileID: 5976299212310164569}
   attackDist: 30
-  shotCoolDown: 1
-  lookSpeed: 2
+  shotCoolDown: 0.5
+  lookSpeed: 1
   showRange: 1
   shotScript: {fileID: 0}
+  currentHealth: 0
+  MaxHelath: 4
+  exp: {fileID: 4472293459428272497, guid: eb7f884e49b00bd42bedb6e87592189f, type: 3}
 --- !u!114 &5473449555552027733
 MonoBehaviour:
   m_ObjectHideFlags: 0

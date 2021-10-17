@@ -161,9 +161,10 @@ GameObject:
   m_Component:
   - component: {fileID: 542122896348723331}
   - component: {fileID: 5865425259079230201}
-  - component: {fileID: 7696460761679695282}
   - component: {fileID: 6612721568361862892}
   - component: {fileID: 5899076270366673154}
+  - component: {fileID: 8425114101149117852}
+  - component: {fileID: 2198101353518730362}
   m_Layer: 0
   m_Name: Enemy02Prefabs
   m_TagString: Enemy
@@ -184,6 +185,7 @@ Transform:
   m_Children:
   - {fileID: 3194827150117704104}
   - {fileID: 3142924171479467231}
+  - {fileID: 2261845546748059572}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -206,26 +208,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7696460761679695282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 922623616582476345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3396606f2f727124daa236511a0aaa9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movespeed: 7
-  howclose: 35
-  EnemyHealth: 5
-  MaterialOfEnemy: {fileID: 545919315381353877, guid: 21023e80b85568b4b8dde43dace013a7,
-    type: 3}
-  exp: {fileID: 4472293459428272497, guid: df85828235f414d47a8fdf55e32c6187, type: 3}
-  expForce: 200
-  radius: 10
 --- !u!54 &6612721568361862892
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -250,11 +232,56 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922623616582476345}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.09256287, y: 0.12308645, z: 0.06733475}
   m_Center: {x: 0.00068855286, y: 0.06611562, z: -0.00022163392}
+--- !u!114 &8425114101149117852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922623616582476345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 805d3fe47b28e6f41a96ea4af42eceb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTarget: {fileID: 0}
+  attackDist: 300
+  EnemyHealth: 5
+  MaterialOfEnemy: {fileID: 546064181440349271, guid: 4da2f8f6ba69760469180bcfeb21850e,
+    type: 3}
+  exp: {fileID: 4472293459428272497, guid: eb7f884e49b00bd42bedb6e87592189f, type: 3}
+  expForce: 0
+  radius: 0
+  showRange: 1
+  Ani: {fileID: 0}
+  tf: {fileID: 2261845546748059572}
+--- !u!195 &2198101353518730362
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922623616582476345}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.06
+  m_Speed: 15
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.15
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1647514312951894218
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +661,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3788435089360332693}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3230112157060116950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2261845546748059572}
+  m_Layer: 0
+  m_Name: SpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2261845546748059572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3230112157060116950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.198, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 542122896348723331}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3355333260593066933
 GameObject:

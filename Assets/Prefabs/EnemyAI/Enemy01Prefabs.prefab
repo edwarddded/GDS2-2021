@@ -545,6 +545,36 @@ Transform:
   m_Father: {fileID: 6284783402425904175}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6469825412263213731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8535789607560596948}
+  m_Layer: 0
+  m_Name: SpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8535789607560596948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469825412263213731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.94, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6284783402425904175}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6661907522102605461
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,8 +586,9 @@ GameObject:
   - component: {fileID: 6284783402425904175}
   - component: {fileID: 132897834262345301}
   - component: {fileID: 2856995143907500551}
-  - component: {fileID: 7770697735837470767}
   - component: {fileID: 4936051855813260215}
+  - component: {fileID: 445270192}
+  - component: {fileID: 445270198}
   m_Layer: 0
   m_Name: Enemy01Prefabs
   m_TagString: Enemy
@@ -578,6 +609,7 @@ Transform:
   m_Children:
   - {fileID: 8873182204384022643}
   - {fileID: 5684521045475646985}
+  - {fileID: 8535789607560596948}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -616,26 +648,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &7770697735837470767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6661907522102605461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3396606f2f727124daa236511a0aaa9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movespeed: 8
-  howclose: 35
-  EnemyHealth: 3
-  MaterialOfEnemy: {fileID: 2972258869829250989, guid: 94a36c76f8aeeae4eb4c114336e2d3d0,
-    type: 3}
-  exp: {fileID: 4472293459428272497, guid: df85828235f414d47a8fdf55e32c6187, type: 3}
-  expForce: 200
-  radius: 10
 --- !u!65 &4936051855813260215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -644,11 +656,56 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6661907522102605461}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.269455, y: 1.6287284, z: 1.0641556}
   m_Center: {x: -0.0705719, y: -0.3143642, z: -0.03207779}
+--- !u!114 &445270192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6661907522102605461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 805d3fe47b28e6f41a96ea4af42eceb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTarget: {fileID: 0}
+  attackDist: 300
+  EnemyHealth: 5
+  MaterialOfEnemy: {fileID: 2972258869829250989, guid: 94a36c76f8aeeae4eb4c114336e2d3d0,
+    type: 3}
+  exp: {fileID: 4472293459428272497, guid: eb7f884e49b00bd42bedb6e87592189f, type: 3}
+  expForce: 0
+  radius: 0
+  showRange: 1
+  Ani: {fileID: 0}
+  tf: {fileID: 8535789607560596948}
+--- !u!195 &445270198
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6661907522102605461}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.59
+  m_Speed: 15
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.74
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &7501528476154430517
 GameObject:
   m_ObjectHideFlags: 0
