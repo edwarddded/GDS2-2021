@@ -5,14 +5,21 @@ using UnityEngine;
 public class SkipButton : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    public GameObject MainCanvas;
+    public GameObject Playercamera;
+    public GameObject player, Cutscene1;
+    public PlayerMovement movement;
+    public void SkipGame()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (var enemy in enemys)
+        {
+            enemy.SetActive(true);
+        }
+        movement.enabled = true;
+        MainCanvas.SetActive(true);
+        Playercamera.SetActive(true);
+        player.SetActive(true);
+        Cutscene1.SetActive(false);
     }
 }
