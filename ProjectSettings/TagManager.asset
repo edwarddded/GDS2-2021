@@ -12,6 +12,8 @@ TagManager:
   - Enemy2
   - Tower
   - Item
+  - hint1
+  - hint2
   layers:
   - Default
   - TransparentFX

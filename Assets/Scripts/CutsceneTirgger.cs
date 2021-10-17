@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class CutsceneTirgger : MonoBehaviour
 {
     public GameObject MainCanvas;
     public GameObject Playercamera;
     public GameObject player, Cutscene1;
     public PlayerMovement movement;
+    public GameObject missionHint;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        missionHint.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +22,7 @@ public class CutsceneTirgger : MonoBehaviour
             BoxCollider collider = gameObject.GetComponent<BoxCollider>();
             collider.enabled = false;
             StartCoroutine(Activesecne());
+            Hint();
         }
     }
 
@@ -45,10 +48,17 @@ public class CutsceneTirgger : MonoBehaviour
         Playercamera.SetActive(true);
         player.SetActive(true);
         Cutscene1.SetActive(false);
+        
     }
+
+   private void Hint()
+    {
+        missionHint.SetActive(true);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 }
