@@ -8,7 +8,7 @@ public class RandomMaterial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int numberOfMaterial = Random.Range(70,100);
+        int numberOfMaterial = Random.Range(100,150);
         for (int i = 0; i < numberOfMaterial; i++)
         {
             float x = Random.Range(-224, 260);
