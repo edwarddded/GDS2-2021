@@ -10,6 +10,8 @@ public class DeleteHint : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            BoxCollider collider = gameObject.GetComponent<BoxCollider>();
+            collider.enabled = false;
             Destroy(missionHint1);
            
             
