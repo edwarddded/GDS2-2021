@@ -20,13 +20,15 @@ public class CutsceneTirgger : MonoBehaviour
             BoxCollider collider = gameObject.GetComponent<BoxCollider>();
             collider.enabled = false;
             StartCoroutine(Activesecne());
+            
         }
     }
 
     IEnumerator Activesecne()
     {
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach(var enemy in enemys)
+        
+        foreach (var enemy in enemys)
         {
             enemy.SetActive(false);
         }
@@ -45,6 +47,7 @@ public class CutsceneTirgger : MonoBehaviour
         Playercamera.SetActive(true);
         player.SetActive(true);
         Cutscene1.SetActive(false);
+        
     }
     // Update is called once per frame
     void Update()
