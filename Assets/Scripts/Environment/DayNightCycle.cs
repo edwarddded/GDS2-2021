@@ -43,6 +43,8 @@ public class DayNightCycle : MonoBehaviour
    
     public void Start()
     {
+        PlayerPrefs.SetInt("daysSurvived", 0);
+
         timeRate = 1.0f / FullDayLength;
         time = StartTime;
         IsNight = false;
@@ -72,6 +74,7 @@ public class DayNightCycle : MonoBehaviour
             {
                 IsMorning = true;
                 IsNight = false;
+                PlayerPrefs.SetInt("daysSurvived", days);
                 days++;
             }
 
