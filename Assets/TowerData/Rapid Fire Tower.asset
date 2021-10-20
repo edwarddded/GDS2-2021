@@ -22,5 +22,5 @@ MonoBehaviour:
   itemsRequired:
   - {fileID: 11400000, guid: bca59363b89728d4ab1188c9aadeda3b, type: 2}
   - {fileID: 11400000, guid: ea0e2387041e2744c8d35aaf01d1db37, type: 2}
-  itemAmount: 0300000001000000
+  itemAmount: 0100000001000000
   desc: Rapid Fire Tower has a super high attack rate of fire

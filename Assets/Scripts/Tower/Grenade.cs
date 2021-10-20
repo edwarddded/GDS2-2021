@@ -14,7 +14,8 @@ public class Grenade : MonoBehaviour
     void Start()
     {
         RG = gameObject.GetComponent<Rigidbody>();
-        RG.AddForce(transform.forward * speed);      
+        RG.AddForce(transform.forward * speed);
+        Destroy(gameObject, 5);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,10 +26,6 @@ public class Grenade : MonoBehaviour
             Destroy(_exp, 3);
             Destroy(gameObject);
             KnockBack();
-        }
-        else
-        {
-            Destroy(gameObject, 5);
         }
     }
     //private void OnCollisionEnter(Collision other)

@@ -23,5 +23,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bca59363b89728d4ab1188c9aadeda3b, type: 2}
   - {fileID: 11400000, guid: ea0e2387041e2744c8d35aaf01d1db37, type: 2}
   - {fileID: 11400000, guid: 66029fc4589535441a024e9e38330b90, type: 2}
-  itemAmount: 030000000300000001000000
+  itemAmount: 020000000200000001000000
   desc: Cannon Tower has high AOE damage for enemy

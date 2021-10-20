@@ -17,7 +17,7 @@ public class SpawnEnemyAI : MonoBehaviour
     private int zPos;
     public int enemyCount;
     [SerializeField]
-    private int numberofEnemyInWave =3;
+    private int numberofEnemyInWave =1;
     public bool isSpawnEnemy = false;
 
 
@@ -43,7 +43,7 @@ public class SpawnEnemyAI : MonoBehaviour
         if (Morning && isSpawnEnemy)
         {
             isSpawnEnemy = false;
-            numberofEnemyInWave += Days;
+            numberofEnemyInWave += 1;
             Debug.LogWarning(numberofEnemyInWave);
             enemyCount = 0;
         }
@@ -57,6 +57,8 @@ public class SpawnEnemyAI : MonoBehaviour
             zPos = Random.Range(zPosMin, zPosMax);
             Instantiate(Enemy1, new Vector3(transform.position.x + xPos, transform.position.y, transform.position.z + zPos), Quaternion.identity);
             Instantiate(Enemy2, new Vector3(transform.position.x + xPos, transform.position.y, transform.position.z + zPos), Quaternion.identity);
+            Instantiate(Enemy3, new Vector3(transform.position.x + xPos, transform.position.y, transform.position.z + zPos), Quaternion.identity);
+            Instantiate(Enemy4, new Vector3(transform.position.x + xPos, transform.position.y, transform.position.z + zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount += 1;    
         }       

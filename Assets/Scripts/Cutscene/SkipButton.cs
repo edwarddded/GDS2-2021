@@ -11,15 +11,16 @@ public class SkipButton : MonoBehaviour
     public PlayerMovement movement;
     public void SkipGame()
     {
-        GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (var enemy in enemys)
-        {
-            enemy.SetActive(true);
-        }
+        
         movement.enabled = true;
         MainCanvas.SetActive(true);
         Playercamera.SetActive(true);
         player.SetActive(true);
         Cutscene1.SetActive(false);
+        GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (var enemy in enemys)
+        {
+            enemy.SetActive(true);
+        }
     }
 }

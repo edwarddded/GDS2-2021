@@ -9,7 +9,7 @@ public class NewEnenmyController : MonoBehaviour
     [SerializeField] private GameObject currentTarget;
     [SerializeField] public float attackDist;
     public float EnemyHealth;
-    public GameObject MaterialOfEnemy;
+    //public GameObject MaterialOfEnemy;
     public GameObject exp;
     public float expForce, radius;
     public bool showRange = false;
@@ -30,7 +30,7 @@ public class NewEnenmyController : MonoBehaviour
             GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
             Destroy(_exp, 3);
             //KnockBack();
-            Instantiate(MaterialOfEnemy, gameObject.transform.position, gameObject.transform.rotation);
+            //Instantiate(MaterialOfEnemy, tf.position, gameObject.transform.rotation);
             Destroy(gameObject);
             FindObjectOfType<AudioManager>().Play("Hurt");
         }
@@ -112,7 +112,7 @@ public class NewEnenmyController : MonoBehaviour
             GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
             Destroy(_exp, 3);
             
-            Instantiate(MaterialOfEnemy, tf.position, gameObject.transform.rotation);
+            //Instantiate(MaterialOfEnemy, tf.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
 

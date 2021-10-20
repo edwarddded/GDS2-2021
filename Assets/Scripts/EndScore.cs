@@ -10,7 +10,7 @@ public class EndScore : MonoBehaviour
 
     void Start()
     {
-        score = 0;
+        score = 1;
         score = PlayerPrefs.GetInt("daysSurvived");
         scoreText.text = score + " Days";
     }

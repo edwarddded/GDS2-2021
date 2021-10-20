@@ -240,8 +240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurretHead: {fileID: 5976299212310164569}
-  attackDist: 30
-  shotCoolDown: 0.5
+  attackDist: 35
+  shotCoolDown: 0.7
   lookSpeed: 1
   showRange: 1
   shotScript: {fileID: 0}
