@@ -42,6 +42,7 @@ public class InventoryUI : MonoBehaviour
         {
             if (Input.GetButtonDown("Inventory"))
             {
+                FindObjectOfType<AudioManager>().Play("Click");
                 inventoryUI.SetActive(!inventoryUI.activeSelf);
                 if (inventoryUI.activeSelf == true)
                 {
@@ -52,6 +53,7 @@ public class InventoryUI : MonoBehaviour
             }
             if (Input.GetButtonDown("Build"))
             {
+                FindObjectOfType<AudioManager>().Play("Click");
                 buildUI.SetActive(!buildUI.activeSelf);
                 if (buildUI.activeSelf == true)
                 {

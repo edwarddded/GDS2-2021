@@ -35,8 +35,9 @@ public class TowerRefund : MonoBehaviour
     {
         Debug.Log("refunding tower");
         hasRefunded = true;
+        FindObjectOfType<AudioManager>().Play("Refund");
 
-        for(int i = 0; i < refundedItems.Length; i++)
+        for (int i = 0; i < refundedItems.Length; i++)
         {
             for(int j = 0; j < itemAmounts[i]; j++)
             {

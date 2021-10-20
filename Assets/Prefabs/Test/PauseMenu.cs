@@ -14,10 +14,12 @@ public class PauseMenu : MonoBehaviour
         {
             if (GameIsPause)
             {
+                FindObjectOfType<AudioManager>().Play("Click");
                 Resume();
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play("Click");
                 Pause();
             }
         }

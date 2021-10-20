@@ -40,6 +40,7 @@ public class ItemPickup : MonoBehaviour
 
         if (Input.GetKeyDown("e") && isSelected)
         {
+            FindObjectOfType<AudioManager>().Play("PickUp");
             //Object is only destroyed if it is successfully added to the inventory
             if (Inventory.instance.Add(item))
             {
