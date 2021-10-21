@@ -4213,7 +4213,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Me
+  m_Text: AI
 --- !u!222 &362091668
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6489,8 +6489,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Back\uFF1F\uFF01I want to go back home\uFF01I was  in my store room just
-    now\uFF01"
+  m_Text: 'But one day, the newly manufactured robots went out of control. All the
+    human on this island ran away quickly and gave up on the robots.
+
+    So now,
+    all the robots here, on this island will attact human they find in the night.
+
+'
 --- !u!222 &771166525
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8621,7 +8626,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'What..what are you?
 
-    Where is this place?'
+    Where is this place?
+
+    Let me back home !'
 --- !u!222 &955564597
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11339,7 +11346,7 @@ GameObject:
   - component: {fileID: 1237680363}
   - component: {fileID: 1237680362}
   m_Layer: 5
-  m_Name: Dialogue-Character2
+  m_Name: Dialogue-AI3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13626,9 +13633,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '..........
-
-    .....under... temple
+  m_Text: 'I can help you one time...Here are some drawings of towers, you can find
+    materials around this island and build towers to defence the robots. And there
+    are three special cubes on this island too, they have more power. After 15 days,
+    there will be a chance can let you back home.
 
 '
 --- !u!222 &1585495290
@@ -14104,7 +14112,7 @@ GameObject:
   - component: {fileID: 1606541124}
   - component: {fileID: 1606541123}
   m_Layer: 5
-  m_Name: Dialogue-AI 3
+  m_Name: Dialogue-AI 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16573,9 +16581,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '...under temple?
+  m_Text: 'Survival for 15 days?
 
-    Is something there? Do I have to go under the temple?!'
+    I will try my best to live longer! I will back
+    home!'
 --- !u!222 &1836730754
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17384,9 +17393,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '.... welcome...back...
+  m_Text: 'Here is the island " CRETE".
 
-'
+    It''s an island belong to the Robot....Oh,
+    but long long ago, on the Crete, human built a highly mechanized city, and in-deepth
+    study about the robots.'
 --- !u!222 &1893820218
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18629,9 +18640,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Human...? I am....I... am...
+  m_Text: 'Welcome to the CRETE, unlucky boy!
 
-    .... I...will work...for you'
+    Hundreds of years, you are the
+    first human come to here.'
 --- !u!222 &2037603638
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18988,7 +19000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2104631048
 Transform:
   m_ObjectHideFlags: 0
@@ -19483,12 +19495,12 @@ PrefabInstance:
     - target: {fileID: 2395598213627599440, guid: c9ec5d0e590b5524782f5251293c30f4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -3e-45
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 2395598213627599440, guid: c9ec5d0e590b5524782f5251293c30f4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1e-45
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 2395598214492051494, guid: c9ec5d0e590b5524782f5251293c30f4,
         type: 3}
