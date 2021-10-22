@@ -24,6 +24,8 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Image dialoguePortrait;
     public float delay = 0.001f;
+    private bool isCurrentlyTyping;
+    private string completeText;
 
     public Queue<DialogueBase.info> dialogueinfo = new Queue<DialogueBase.info>();
 
@@ -52,27 +54,40 @@ public class DialogueManager : MonoBehaviour
             EndofDialogue();
             return;
         }
-
+        if(isCurrentlyTyping == true)
+        {
+            CompleteText();
+            StopAllCoroutines();
+            isCurrentlyTyping = false;
+            return;
+        }
         DialogueBase.info info = dialogueinfo.Dequeue();
-
+        completeText = info.Mytext;
         dialogueName.text = info.Myname;
         dialogueText.text = info.Mytext;
         dialoguePortrait.sprite = info.portrait;
+        dialogueText.text = "";
 
         StartCoroutine(TypeText(info));
     }
 
     IEnumerator TypeText(DialogueBase.info info)
     {
-        dialogueText.text = "";
+        isCurrentlyTyping = true;
+       
         foreach(char c in info.Mytext.ToCharArray())
         {
             yield return new WaitForSeconds(delay);
             dialogueText.text += c;
-            yield return null;
+            
         }
+        isCurrentlyTyping = false;
     }
 
+    private void CompleteText()
+    {
+        dialogueText.text = completeText;
+    }
     public void EndofDialogue()
     {
         DialogueBox.SetActive(false);
