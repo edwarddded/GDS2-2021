@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DayNightCycle : MonoBehaviour
 {
@@ -57,6 +58,8 @@ public class DayNightCycle : MonoBehaviour
 
     private void Update()
     {
+        DayController();
+        
         texts.text = "Days: 0" + days;
 
         //Check Day/Night
@@ -159,6 +162,25 @@ public class DayNightCycle : MonoBehaviour
         //Light and reflections intensity
         RenderSettings.ambientIntensity = LightingIntensityMultiplier.Evaluate(time);
         RenderSettings.reflectionIntensity = ReflectionsIntensityMultipler.Evaluate(time);
+    }
+    private void DayController()
+    {
+        if (days> 5&& days<=10)
+        {
+            FullDayLength = 60f;
+        }
+        else if (days>10)
+        {
+           FullDayLength = 100f;
+        }
+        else if (days ==14)
+        {
+            FullDayLength = 120f;
+        }
+        if (days ==15)
+        {
+            SceneManager.LoadScene(7);
+        }
     }
     private void incrementTime()
     {

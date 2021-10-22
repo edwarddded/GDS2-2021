@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
     public float howclose;
 
     public float EnemyHealth;
-    public GameObject MaterialOfEnemy;
+    //public GameObject MaterialOfEnemy;
     //Enemy Explosion
     public GameObject exp;
     public float expForce, radius;
@@ -33,7 +33,7 @@ public class EnemyAI : MonoBehaviour
             GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
             Destroy(_exp, 3);
             KnockBack();
-            Instantiate(MaterialOfEnemy, gameObject.transform.position, gameObject.transform.rotation);
+            //Instantiate(MaterialOfEnemy, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
             FindObjectOfType<AudioManager>().Play("Hurt");
         }
@@ -108,7 +108,7 @@ public class EnemyAI : MonoBehaviour
         {
             GameObject _exp = Instantiate(exp, transform.position, transform.rotation);
             Destroy(_exp, 3);
-            Instantiate(MaterialOfEnemy, gameObject.transform.position, gameObject.transform.rotation);
+            //Instantiate(MaterialOfEnemy, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
     }

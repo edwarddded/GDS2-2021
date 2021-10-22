@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SurvivedScene.unity
     guid: 88688260f6c1b40058d9403c486e1617
+  - enabled: 1
+    path: Assets/Scenes/EndCutscene.unity
+    guid: d6bcc5321987e4747a08925c6b58da50
   m_configObjects: {}

@@ -15,10 +15,10 @@ MonoBehaviour:
   Dialogueinfo:
   - Myname: Robby
     portrait: {fileID: 21300000, guid: 369db8a4610be29408819fefd93a1ea8, type: 3}
-    Mytext: ready to back the crete? The map will help you to find position!
+    Mytext: 'ready to back the crete? '
   - Myname: robby
     portrait: {fileID: 21300000, guid: 369db8a4610be29408819fefd93a1ea8, type: 3}
-    Mytext: find the unqiue robot! you will find the way back to home
+    Mytext: Live as far as possible to the fifteenth day
   - Myname: robby
     portrait: {fileID: 21300000, guid: 369db8a4610be29408819fefd93a1ea8, type: 3}
-    Mytext: back to the crete by go through the portal
+    Mytext: Back to the crete by go through the portal

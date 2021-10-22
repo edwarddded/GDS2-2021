@@ -27,5 +27,14 @@ public class EndScenController : MonoBehaviour
         Application.Quit();
         Debug.Log("Exit Game");
     }
+    public void PlayAgain()
+    {
+        AutoManger = GameObject.Find("AudioManager").gameObject;
+        if (AutoManger != null)
+        {
+            Destroy(AutoManger);
+            SceneManager.LoadScene(4);
+        }
+    }
    
 }

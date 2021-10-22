@@ -23,5 +23,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bdfe8e4c906b8c34a9566af84ba4b996, type: 2}
   - {fileID: 11400000, guid: 2a302ec110d9e1e4e9503a677092ccda, type: 2}
   - {fileID: 11400000, guid: ea0e2387041e2744c8d35aaf01d1db37, type: 2}
-  itemAmount: 010000000200000002000000
+  itemAmount: 010000000100000001000000
   desc: Burst Tower! Can help you quickly destroy the enemy
