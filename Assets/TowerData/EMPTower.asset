@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EMPTower
   m_EditorClassIdentifier: 
   name: EMP Tower
-  icon: {fileID: 21300000, guid: 34278824c1d94b745ba122b37d526e5c, type: 3}
+  icon: {fileID: 21300000, guid: c4d9edfd55f2ae14a9ea4b8ce056591d, type: 3}
   towerFrame: {fileID: 8476238294178372891, guid: 822cfb7edefb2c34588b5833864b5f7a,
     type: 3}
   towerFinished: {fileID: 6465978108582424291, guid: 2ab73a9d609932d42ae9a77a43b53ccc,

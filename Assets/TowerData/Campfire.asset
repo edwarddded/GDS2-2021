@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Campfire
   m_EditorClassIdentifier: 
   name: Campfire
-  icon: {fileID: 21300000, guid: cf5f116fff4cf3646a832d94b2411838, type: 3}
+  icon: {fileID: 21300000, guid: c4f51192610cece4b86b5bc27fae9774, type: 3}
   towerFrame: {fileID: 5937822938084387610, guid: 9bf6afad039472341a4423faa47a166a,
     type: 3}
   towerFinished: {fileID: 5305628277266183024, guid: e17b3dda7ccb14d45a13a770614afa20,
