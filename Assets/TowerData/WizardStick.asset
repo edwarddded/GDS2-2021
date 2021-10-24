@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WizardStick
   m_EditorClassIdentifier: 
   name: Wizard Stick
-  icon: {fileID: 21300000, guid: a85db548879cda649b89109cb9b5e8c1, type: 3}
+  icon: {fileID: 21300000, guid: ca4211effd135e442b8ed9d13610bd44, type: 3}
   towerFrame: {fileID: 3419385875458718466, guid: 7a755ff88b7e7db479636d1a0fee230f,
     type: 3}
   towerFinished: {fileID: 499522950074899730, guid: c4cea168c783b794e9bebeb0a763b1a7,

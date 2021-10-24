@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CannonTower
   m_EditorClassIdentifier: 
   name: Cannon
-  icon: {fileID: 21300000, guid: a70db5b9e6273f040b704731e21ba324, type: 3}
+  icon: {fileID: 21300000, guid: 85ca0ee7aa8cb764d98eee599cc6142a, type: 3}
   towerFrame: {fileID: 7385853930231812865, guid: 2d4730e9f2943d54997f2211285e2543,
     type: 3}
   towerFinished: {fileID: 9030787311114746545, guid: 651c373833132e540b7b7b9ecf148a09,
