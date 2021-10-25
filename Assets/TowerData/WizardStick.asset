@@ -18,7 +18,7 @@ MonoBehaviour:
     type: 3}
   towerFinished: {fileID: 499522950074899730, guid: c4cea168c783b794e9bebeb0a763b1a7,
     type: 3}
-  buildTime: 5
+  buildTime: 3
   itemsRequired:
   - {fileID: 11400000, guid: 7605b76ca9b2de34ca1162a6b25fa5b8, type: 2}
   - {fileID: 11400000, guid: 213ebb7faef27cc478ee25e23acf5abc, type: 2}

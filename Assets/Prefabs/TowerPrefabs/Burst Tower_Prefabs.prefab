@@ -246,7 +246,7 @@ MonoBehaviour:
   showRange: 1
   shotScript: {fileID: 0}
   currentHealth: 0
-  MaxHelath: 4
+  MaxHelath: 10
   exp: {fileID: 4472293459428272497, guid: eb7f884e49b00bd42bedb6e87592189f, type: 3}
 --- !u!114 &5488694232271709579
 MonoBehaviour:

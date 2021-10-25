@@ -402,7 +402,7 @@ MonoBehaviour:
   refundedItems:
   - {fileID: 11400000, guid: bca59363b89728d4ab1188c9aadeda3b, type: 2}
   - {fileID: 11400000, guid: ea0e2387041e2744c8d35aaf01d1db37, type: 2}
-  itemAmounts: 0300000001000000
+  itemAmounts: 0300000002000000
   isSelected: 0
 --- !u!114 &-8677403557709094031
 MonoBehaviour:
