@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667a7e5f15214b34eb9b855d45f8d4e3, type: 3}
+  m_Name: Burst Tower
+  m_EditorClassIdentifier: 
+  name: Burst Tower
+  icon: {fileID: 21300000, guid: d3c8ab3749326b3428e79c774ac2052a, type: 3}
+  towerFrame: {fileID: 8600667901473950960, guid: fe3885a025de22542ac455444b87aacc,
+    type: 3}
+  towerFinished: {fileID: 6802018567416532797, guid: 01f1ae430fa0c004c9144b3fb5ca9cc7,
+    type: 3}
+  buildTime: 2
+  itemsRequired:
+  - {fileID: 11400000, guid: bdfe8e4c906b8c34a9566af84ba4b996, type: 2}
+  - {fileID: 11400000, guid: 2a302ec110d9e1e4e9503a677092ccda, type: 2}
+  - {fileID: 11400000, guid: ea0e2387041e2744c8d35aaf01d1db37, type: 2}
+  itemAmount: 010000000100000001000000
+  desc: Burst Tower! Can help you quickly destroy the enemy
