@@ -4,62 +4,182 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float movementSpeed;
+    public float movementSpeed = 6;
     public Rigidbody rb;
-
-    Vector3 movement;
-
+    
+    //Restricts inventory / building UI when player is trying to place a tower
+    //This boolean can also be used to restrict other player functions later
     public bool isBuilding;
-    public GameObject[] TowerFrames;
+    //*****
+    private Vector3 movedirection;
+    public CharacterController controller;
 
-    private Inventory inv;
+    public float trunSmoothTime = 0.1f;
+    float turnSmoothVelocity;
+    public Transform cam;
 
+    //*****
+    private Vector3 velocity;
+    [SerializeField] private bool isGrounded;
+    [SerializeField] private float groundCheckDistance;
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private float gravity;
+
+    [SerializeField] private float jumpHeight;
+    //*****
+    public GameObject map;
+    private float Playerhealth;
+    //Player animation
+    private Animator PlayerAnimator;
+
+    public bool Cwalk;
+    public bool Crun;
+    public bool Cjump;
     private void Start()
     {
-        inv = GetComponent<Inventory>();
         isBuilding = false;
+        //col = GetComponent<CapsuleCollider>();
+        PlayerAnimator = GetComponentInChildren<Animator>();
+        //*****
+        controller = GetComponent<CharacterController>();
+        //*****
+        Playerhealth = gameObject.GetComponent<Health>().currentHealth;
+
+        Cwalk = false;
+        Crun = false;
+        Cjump = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Player rotation based on where the mouse is
-        Plane playerPlane = new Plane(Vector3.up, transform.position);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        float hitDist = 0.0f;
-
-        if (playerPlane.Raycast(ray, out hitDist))
+        if (Playerhealth>0)
         {
-            Vector3 targetPoint = ray.GetPoint(hitDist);
-            Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
-            targetRotation.x = 0;
-            targetRotation.z = 0;
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 7f * Time.deltaTime);
+            Sprint();
+            Move();
         }
-
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.z = Input.GetAxisRaw("Vertical");
-
-
-        /*******************
-         * Tower Building 
-         ********************/
-        if (Input.GetKeyDown("1"))
+        
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            // 10 is just an example cost of a tower, 
-            // going to implement a separate script to retrieve tower cost later
-            if (!isBuilding && (inv.GetScrap() >= 10))
+            if (map != null)
             {
-                isBuilding = true;
-                Instantiate(TowerFrames[0]);
+                FindObjectOfType<AudioManager>().Play("Click");
+                bool isActive = map.activeSelf;
+                map.SetActive(!isActive);
             }
         }
+    }
 
+    private void Move()
+    {
+        isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
+        //Ground check
+        if (isGrounded && velocity.y< 0)
+        {
+            velocity.y = -2f;
+        }
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if (direction != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
+        {
+            PlayerAnimator.SetBool("Walk", true);
+            Debug.Log("Walk");
+
+            if(Cwalk == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Walk");
+                FindObjectOfType<AudioManager>().Stop("Run");
+                Cwalk = true;
+            }
+        }
+        else if (direction != Vector3.zero && Input.GetKey (KeyCode.LeftShift))
+        {   
+            
+            PlayerAnimator.SetBool("Run", true);
+
+            if (Crun == false)
+            {
+                FindObjectOfType<AudioManager>().Play("Run");
+                FindObjectOfType<AudioManager>().Stop("Walk");
+                Crun = true;
+            }
+        }
+        else if (direction == Vector3.zero)
+        {
+            PlayerAnimator.SetBool("Walk", false);
+            PlayerAnimator.SetBool("Run", false);
+            Cwalk = false;
+            Crun = false;
+            FindObjectOfType<AudioManager>().Stop("Walk");
+            FindObjectOfType<AudioManager>().Stop("Run");
+        }
+
+        if (direction.magnitude >= 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, trunSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            controller.Move(moveDir.normalized * movementSpeed * Time.deltaTime);
+            
+        }
+
+        if (isGrounded)
+        {
+            PlayerAnimator.SetBool("isGround", true);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+                PlayerAnimator.SetTrigger("Jump");
+                FindObjectOfType<AudioManager>().Play("Jump");
+                
+            }
+        }
+        else if (!isGrounded)
+        {
+            PlayerAnimator.SetBool("isGround", false);
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+    }
+    private void Sprint()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            movementSpeed = 15f;
+        }
+        else if (!Input.GetKey(KeyCode.LeftShift))
+        {
+            movementSpeed = 6f;
+        }
+    }
+    private void Jump()
+    {
+        velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+        
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Enemy2")
+        {
+            StartCoroutine(PlayerFreeze());
+            
+        }
+    }
+    IEnumerator PlayerFreeze()
+    {
+        movementSpeed = 0;
+        yield return new WaitForSeconds(0.75f);
+        movementSpeed = 10;
     }
 
     private void FixedUpdate()
     {
-        movement.Normalize();
-        rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
+  
     }
 }
